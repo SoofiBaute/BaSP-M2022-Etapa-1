@@ -1,9 +1,12 @@
+body{
+    background-color: #fff;
+}
 .header{
     display: inline-block;
     width: 100%;
     height: 156px;
     border: 1px solid black;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
     position: absolute;
     left: 380px;
 }
@@ -17,7 +20,7 @@ a{
 #leftBar{
     display: inline-block;
     width: 376px;
-    height: 1026px;
+    height: auto;
     border: 1px solid black;
    /*background-color: aqua;*/
     position: relative;
@@ -78,39 +81,57 @@ color: #545454;
 }
 
 .sideBar-child-three{
-padding-top: 10px;
+padding-top: 4px;
 }
 
-.sideBar-child-3{
-    margin-bottom: 15px;
+.sideBar-child-home{
+    margin-bottom: 5px;
     border-bottom: 1px solid #545454;
-    padding-bottom: 5px;
-    display: block;
+    padding-bottom: 15px;
+    padding-top: 2px;
 }
+.sideBar-child-mail{
+    margin-bottom: 5px;
+    border-bottom: 1px solid #545454;
+    padding-bottom: 15px;
+    padding-top: 2px;
+}
+
+.sideBar-child-phone{
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+}
+
+
+
+
+
+
 
 
 
 /*MAIN*/
 .main{
     width: 100%;
-    height: 712px;
+    height: 768px;
     display: inline-block;
     border: 1px solid black;
-    background-color: chartreuse;
+    /*background-color: chartreuse;*/
     position: absolute;
     top:157px;
-    left: 380px;
+    left:380px;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 /*FOOTER*/
 .footer{
     display: inline-block;
     border: 1px solid black;
-    background-color: brown;
+    /*background-color: brown;*/
     width: 100%;
-    height:156px;
+    height:105px;
     position: absolute;
     left: 380px;
-    top:870px;
+    top:925px;
 } 
