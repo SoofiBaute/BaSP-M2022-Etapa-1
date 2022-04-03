@@ -150,6 +150,64 @@ padding-top: px;
     overflow-x: hidden;
 }
 
+.section-1{
+    border: 1px solid black;
+}
+.section-1-child{
+    display: inline-block;
+}
+.section-1-child h2{
+    width: 455px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    margin-left: 60px;
+}
+
+.p-1{
+ width: 495px;
+ font-family: 'Roboto', sans-serif;
+ font-style: italic;
+ font-size: 28px;
+ margin-top: 20px;
+ margin-bottom: 80px;
+ margin-left: 60px;
+}
+.p-2{
+    width: 600px;
+    color: #545454;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom:80px;
+    margin-left: 60px;
+   }
+.reloj-img{
+    display: inline-block;
+    position: absolute;
+    top: 45px;
+    left: 850px;
+}   
+.button-lm{
+    height: auto;
+    margin-top: 20px;
+    margin-bottom:80px;
+    margin-left: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+.button-lm button{
+    width: 150px;
+    height: 60px;
+    padding: 1px;
+    background-color: #B1D1A4;
+    color: #373867;
+    border: 1px solid #373867;
+    border-radius: 8px;
+} 
+
 /*FOOTER*/
 .footer{
     display: inline-block;
