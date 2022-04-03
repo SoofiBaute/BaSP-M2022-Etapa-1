@@ -8,7 +8,7 @@ body{
     border: 1px solid black;
     /*background-color: blueviolet;*/
     position: absolute;
-    left: 380px;
+    left: 376px;
 }
 
 a{
@@ -20,7 +20,7 @@ a{
 #leftBar{
     display: inline-block;
     width: 376px;
-    height: auto;
+    height: 1024;
     border: 1px solid black;
    /*background-color: aqua;*/
     position: relative;
@@ -41,6 +41,12 @@ a{
     margin-bottom: 60px;
 }
 
+.sideBar-child-1 input{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+}
+
 .menu{
     width: 80px;
     border-bottom: 4px solid #B1D1A4;
@@ -59,7 +65,7 @@ a{
 }
 
 .sideBar-child-two{
-    margin-top: 0px;
+    margin-top: 15px;
     margin-bottom: 50px;
     border-top: 1px solid #545454;
 }
@@ -70,7 +76,7 @@ a{
     text-decoration-color: #B1D1A4;
     font-weight: bold;
     font-size: 28px;
-    padding-top: 50px;
+    padding-top: 55px;
     margin-bottom: 15px;
 }
 
@@ -81,25 +87,26 @@ color: #545454;
 }
 
 .sideBar-child-three{
-padding-top: 4px;
+padding-top: 1px;
 }
 
 .sideBar-child-home{
     margin-bottom: 5px;
     border-bottom: 1px solid #545454;
-    padding-bottom: 15px;
-    padding-top: 2px;
+    padding-bottom: 10px;
+    padding-top: 5px;
 }
 .sideBar-child-mail{
     margin-bottom: 5px;
     border-bottom: 1px solid #545454;
-    padding-bottom: 15px;
-    padding-top: 2px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+
 }
 
 .sideBar-child-phone{
     margin-bottom: 5px;
-    padding-bottom: 15px;
+    padding-top: 5px;
 }
 
 
@@ -119,7 +126,7 @@ padding-top: 4px;
     /*background-color: chartreuse;*/
     position: absolute;
     top:157px;
-    left:380px;
+    left:376px;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -130,8 +137,8 @@ padding-top: 4px;
     border: 1px solid black;
     /*background-color: brown;*/
     width: 100%;
-    height:105px;
+    height:110px;
     position: absolute;
-    left: 380px;
+    left:376px;
     top:925px;
 } 
