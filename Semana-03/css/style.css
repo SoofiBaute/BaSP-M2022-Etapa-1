@@ -3,19 +3,51 @@ body{
     height: auto;
 }
 
+a{
+    text-decoration: none;
+    color: #545454;
+}
+
 #leftBar{
     width: 376px;
     height: 100%;
-    background-color: aqua;
-    display: inline-block;
+    background-color: #fff;
+    display:inline-block;
     position: fixed;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    /*background-color: aqua;*/
 }
 
 .conteiner{
-    width: 70%;
+    width: 1064px;
     height: 156px;
     display: inline-block;
-    margin-left: 376px;
-    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 420px;
 }
+
+.sideBar-child{
+    margin-bottom: 50px;
+}
+
+.sideBar-child-1{
+    margin-bottom: 20px;
+}
+
+.menu{
+    width: 80px;
+    border-bottom: 4px solid #B1D1A4;
+    text-decoration-color: #B1D1A4;
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.list-1 li{
+   border-bottom:1px solid #545454;
+   margin-bottom: 10px;
+   font-size: 18px;
+}
+
 
