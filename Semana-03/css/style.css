@@ -1,0 +1,21 @@
+body{
+    width: 1439px;
+    height: auto;
+}
+
+#leftBar{
+    width: 376px;
+    height: 100%;
+    background-color: aqua;
+    display: inline-block;
+    position: fixed;
+}
+
+.conteiner{
+    width: 70%;
+    height: 156px;
+    display: inline-block;
+    margin-left: 376px;
+    margin-top: 0;
+}
+
