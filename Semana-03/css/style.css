@@ -193,6 +193,7 @@ padding-top: px;
     margin-bottom:80px;
     margin-left: 60px;
     font-family: 'Roboto', sans-serif;
+
     font-size: 28px;
 }
 .button-lm button{
@@ -203,6 +204,7 @@ padding-top: px;
     color: #373867;
     border: 1px solid #373867;
     border-radius: 8px;
+    font-weight: bold;
 } 
 
 /*SECTION 2*/
@@ -221,37 +223,51 @@ padding-top: px;
 }
 
 .conteiner-colum{
-    display: inline-block;
-    width: 50%;
-    border-bottom: 1px solid green;
+    width: 100%;
     height: auto;
     margin-top: 30px;
 }
 
 .colum{
-    display: inline;
-}
-
-.colum-img{
-   border-bottom: 1px solid black;
-   width: 600px;
-   height:200px;
+    display: inline-block;
+    background-color: greenyellow;
+    border: 1px solid black;
+    width: 600px;
+    height: 300px;
+    margin-left: 10px;
+    margin-bottom: 20px;
 }
 
 .colum-text{
-    border-bottom: 1px solid red;
-    width: 200px;
+    background-color: aqua;
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
 }
 .colum-text h3{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    display: inline-block;
 }
 .colum-text p{
     font-family: 'Poppins', sans-serif;
+    display: inline-block;
+}
+.colum-img img{
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+}
+.colum-img{
+   /*background-color: blueviolet;*/
+   width: 300px;
+   height:300px;
 }
 
 /*SECTION 3*/
-
 .section-3 h2{
     width: 1500px;
     font-family: 'Poppins', sans-serif;
@@ -278,6 +294,132 @@ padding-top: px;
 .list-2 li{
     padding: 30px;
     list-style-image: url('../Images/check.png') ;
+}
+
+/*SECTION 4*/
+.section-4{
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid black;
+    height: auto;
+}
+.section-4 h2{
+    width: 1500px;
+    font-weight: bold;
+    font-size: 48px;
+    border-bottom: 4px solid #B1D1A4; 
+    margin-top: 20px;
+    margin-left: 110px;
+    margin-bottom: 30px;
+}
+.form{
+    background-color: #B2D1A5;
+    padding: 20px;
+    margin-left: 60px;
+    width: 1100px;
+    height: auto;
+}
+
+.form-child{
+    width: 500px;
+    height: auto;
+    /*background-color: tomato;*/
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    display: inline-block;
+}
+.form-child label{
+    /*background-color: aqua;*/
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.form-child input{
+    margin-top: 10px;
+    padding: 15px;
+    height: 30px;
+    width: 400px;
+}
+
+.form-child-radio{
+    width: 500px;
+    height: auto;
+    /*background-color: tomato;*/
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    display: inline-block;
+}
+
+.form-child-radio label{
+    /*background-color: aqua;*/
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-child-radio input{
+    margin-top: 10px;
+    padding: 15px;
+    height: 30px;
+    width: 30px;
+}
+.input-child{
+    height: 40px;
+    width: 300px;
+}
+
+.radio-cheeck{
+    display: inline-block;
+    height: 70px;
+    width: 500px;
+    padding-top: 1px;
+}
+.radio-cheeck label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+.form-child-textearea{
+    width: 1000px;
+    height: auto;
+    /*background-color: tomato;*/
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 25px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.form-child-textearea textarea{
+    width: 1000px;
+    height: 190px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #9E9E9E;
+    border-radius: 3px;
+    background-color: #FBFCFB;
+    resize: none;
+    display: inline-block;
+}
+
+.submit{
+    height: auto;
+    margin-top: 20px;
+    margin-bottom:80px;
+    margin-left: 60px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+} 
+.submit input{
+    width: 200px;
+    height: 50px;
+    padding: 1px;
+    font-weight: bold;
+    background-color: #B1D1A4;
+    color: #373867;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    position: absolute;
+    left: 900px;
 }
 
 
