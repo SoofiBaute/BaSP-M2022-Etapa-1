@@ -260,7 +260,6 @@ padding-top: px;
     border-bottom: 4px solid #B1D1A4; 
     margin-top: 20px;
     margin-left: 110px;
-    
 }
 
 .list-conteiner{
@@ -269,18 +268,16 @@ padding-top: px;
     margin-left: 110px;
 }
 
-.section-3 ul{
-    padding: 0;
-    list-style: none;
+.list-2{
     margin-top: 20px;
-    margin-left: 110px;
+    margin-left: 115px;
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
-    /*list-style-image: url('check-png.webp');*/
 }
 
-ul li{
+.list-2 li{
     padding: 30px;
+    list-style-image: url('../Images/check.png') ;
 }
 
 
@@ -288,7 +285,7 @@ ul li{
 /*FOOTER*/
 .footer{
     display: inline-block;
-    /*border: 1px solid black;*/
+    border-bottom: 1px solid black;
     border-top: 4px solid #B1D1A4;
     /*background-color: brown;*/
     width: 100%;
