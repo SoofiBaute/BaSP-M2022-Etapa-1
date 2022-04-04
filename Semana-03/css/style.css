@@ -425,42 +425,76 @@ padding-top: px;
 }
 /*SECTION 5*/
 .section-5{
-    width: 1000px;
-    height: 1000px;
-    border: 1px solid black;
-    margin: 50px;
-    margin-left: 350px;
+    width: 1200px;
+    border: 1px solid #FFFFFF;
+    margin: 100px 50px 50px 350px;
     background-color: #D9E0D6;
-    /*border-radius: 50%;*/
+    border-radius: 50%;
     font-family: 'Poppins', sans-serif;
 }
 .conteiner-one{
     display: inline-block;
-    background-color: yellow;
-    width: 400px;
+    /*background-color: yellow;*/
+    width: 450px;
     height: 500px;
+    margin-left: 60px;
+    position: relative;
+    left: 70px;
 }
 .conteiner-one-child{
-    background-color: violet;
+    /*background-color: violet;*/
     margin-bottom: 10px;
     width: 400px;
+    position: relative;
+    top: 43px;
+    left: 50px;
 }
 .conteiner-one-child h2{
     font-size: 30px;
     font-weight: bold;
     color: #756464;
+    margin-left: 150px;
+}
+#history{
+    margin-left: 250px;
+    margin-top: 15px;
 }
 .conteiner-one-child p{
     font-size: 15px;
-    width: 200px;
+    width: 450px;
+    height: 80px;
+    position: relative;
+    top: 35px;
 
 }
 .conteiner-one-child img{
     width: 80px;
     height: 80px;
+    margin-left: 20px;
+    position: relative;
+    top: 106px;
+    left: 190px;
 }
 
+/*segunda caja amarilla*/
+.img-cont img{
+    width: 250px;
+    position: relative;
+    top: 125px;
+}
 
+.conteiner-two-child{
+    /*background-color: violet;*/
+    margin-bottom: 10px;
+    width: 400px;
+    height: 100px;
+    position: relative;
+    top: 170px;
+    font-size: 15px;
+}
+.conteiner-two-child p{
+    width: 200px;
+}
 
 /*SECTION 6*/
 .section-6{
