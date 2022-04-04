@@ -299,7 +299,7 @@ padding-top: px;
 /*SECTION 4*/
 .section-4{
     font-family: 'Poppins', sans-serif;
-    border: 1px solid black;
+    margin-top: 50px;
     height: auto;
 }
 .section-4 h2{
@@ -314,7 +314,8 @@ padding-top: px;
 .form{
     background-color: #B2D1A5;
     padding: 20px;
-    margin-left: 60px;
+    margin-left: 300px;
+    margin-bottom: 30px;
     width: 1100px;
     height: auto;
 }
@@ -422,7 +423,36 @@ padding-top: px;
     left: 900px;
 }
 
+/*SECTION 6*/
+.section-6{
+    margin-top: 50px;
+    height: 300px;
+}
 
+.list-chil-one{
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin-left: 200px;
+}
+
+.list-chil-one h2{
+    width: 200px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    border-bottom: 4px solid #B1D1A4;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.orden-list{
+    font-family: 'Poppins', sans-serif;  
+    list-style: decimal;
+}
+.orden-list li{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
 
 /*FOOTER*/
 .footer{
