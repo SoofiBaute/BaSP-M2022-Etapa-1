@@ -12,7 +12,7 @@ a{
     display: inline-block;
     position: absolute;
     left: 377px;
-    width: 100%;
+    width: 80%;
     height: 156px;
 }
 
@@ -43,8 +43,7 @@ a{
 #leftBar{
     display: inline-block;
     position: absolute;
-    width: 376px;
-    height: 1060;
+    width: 20%;
     border: 1px solid black;
     font-family: 'Roboto', sans-serif;
 }
@@ -140,15 +139,15 @@ padding-top: px;
     position: absolute;
     top:157px;
     left:377px;
-    width: 100%;
+    width: 80%;
     height: 768px;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
 }
 
 /*SECTION 1*/
 .section-1{
-   /* border: 1px solid black;*/
+   width: 100%;
 }
 .section-1-child{
     display: inline-block;
@@ -209,6 +208,7 @@ padding-top: px;
 /*SECTION 2*/
 .section-2{
     border-bottom: 1px solid black;
+    width: 100%;
 }
 .section-2 h2{
     width: 1500px;
@@ -222,15 +222,15 @@ padding-top: px;
 }
 
 .conteiner-colum{
+    display: inline-block;
     margin-top: 30px;
     width: 100%;
     height: auto;
+    
 }
-
 .colum{
     display: inline-block;
-    width: 600px;
-    height: 300px;
+    width: 40%;
     margin-left: 10px;
     margin-bottom: 20px;
     background-color: greenyellow;
@@ -238,14 +238,20 @@ padding-top: px;
 }
 
 .colum-text{
-    width: auto;
-    height: auto;
-    padding: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    background-color: aqua;
+    display: inline-block;
+    width: 200px;
+    padding: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    background-color: yellow;
     border: 1px solid black;
+    font-family: 'Poppins', sans-serif;
 }
+.colum-text h3{
+font-weight: bold;
+}
+
+/*
 .colum-text h3{
     display: inline-block;
     font-family: 'Poppins', sans-serif;
@@ -261,12 +267,15 @@ padding-top: px;
     height: 300px;
 }
 .colum-img{
-   /*background-color: blueviolet;*/
+   background-color: blueviolet;
    width: 300px;
    height:300px;
 }
 
 /*SECTION 3*/
+.section-3{
+    width: 100%;
+}
 .section-3 h2{
     width: 1500px;
     margin-top: 20px;
@@ -312,9 +321,9 @@ padding-top: px;
 }
 .form{
     padding: 20px;
-    margin-left: 300px;
-    margin-bottom: 30px;
-    width: 1100px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    width: 80%;
     height: auto;
     background-color: #B2D1A5;
 }
@@ -423,8 +432,8 @@ padding-top: px;
 }
 /*SECTION 5*/
 .section-5{
-    width: 1200px;
-    margin: 100px 50px 50px 350px;
+    width: 100%;
+    margin:20px;
     background-color: #D9E0D6;
     border: 1px solid #FFFFFF;
     border-radius: 50%;
@@ -433,7 +442,7 @@ padding-top: px;
 .conteiner-one{
     display: inline-block;
     position: relative;
-    left: 70px;
+    left: 200px;
     width: 450px;
     height: 500px;
     margin-left: 60px;
@@ -471,7 +480,6 @@ padding-top: px;
     margin-left: 20px;
 }
 
-/*segunda caja amarilla*/
 .img-cont img{
     position: relative;
     top: 125px;
@@ -493,12 +501,13 @@ padding-top: px;
 /*SECTION 6*/
 .section-6{
     margin-top: 50px;
-    height: 300px;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
 .list-chil-one{
     display: inline-block;
-    width: 300px;
+    width: 15%;
     height: 300px;
     margin-left: 200px;
 }
@@ -525,10 +534,11 @@ padding-top: px;
 .footer{
     display: inline-block;
     position: absolute;
-    left:377px;
-    width: 100%;
-    height:198px;
     top:925px;
+    left:382px;
+    width: 80%;
+    margin-top: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid black;
     border-top: 4px solid #B1D1A4;
     text-align: center;
