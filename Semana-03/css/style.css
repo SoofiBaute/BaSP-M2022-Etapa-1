@@ -10,21 +10,21 @@ a{
 /*HEADER*/
 .header{
     display: inline-block;
-    width: 100%;
-    height: 156px;
     position: absolute;
     left: 377px;
+    width: 100%;
+    height: 156px;
 }
 
 .header h1{
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: 30px;
+   
     margin-top: 60px;
     margin-left: 110px;
     margin-right: 60px;
     border-bottom: 4px solid #B1D1A4;
-
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
 }
 .spam-conteiner{
     position: relative;
@@ -34,18 +34,18 @@ a{
 .spam{
     height: 5px;
     width: 35px;
+    margin-bottom: 10px;
     background-color: #B1D1A4;
     border-radius: 10px;
-    margin-bottom: 10px;
 }
 
 /*SIDE BAR*/
 #leftBar{
     display: inline-block;
+    position: absolute;
     width: 376px;
     height: 1060;
     border: 1px solid black;
-    position: absolute;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -66,25 +66,26 @@ a{
 .sideBar-child-1 input{
     width: 300px;
     height: 40px;
-    border-radius: 5px;
     margin-top: 20px;
+    border-radius: 5px;
+    
 }
 
 .menu{
     width: 80px;
+    margin-bottom: 50px;
+    margin-top: 100px;
     border-bottom: 5px solid #B1D1A4;
-    text-decoration-color: #B1D1A4;
     font-weight: bold;
     font-size: 28px;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    text-decoration-color: #B1D1A4;
 }
 
 .list-1 li{
-   border-bottom:1px solid #545454;
-   margin-bottom: 20px;
-   margin-top: 40px;
-   font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    border-bottom:1px solid #545454;
+    font-size: 18px;
 }
 
 .sideBar-child-two{
@@ -96,17 +97,17 @@ a{
 .getInTouch{
     width: 80px;
     border-bottom: 5px solid #B1D1A4;
-    text-decoration-color: #B1D1A4;
-    font-weight: bold;
-    font-size: 28px;
     padding-top: 60px;
     margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 28px;
+    text-decoration-color: #B1D1A4;
 }
 
 .p{
-line-height: 25px;
-font-size: 18px;
-color: #545454;
+    font-size: 18px;
+    line-height: 25px;
+    color: #545454;
 }
 
 .sideBar-child-three{
@@ -116,15 +117,15 @@ padding-top: px;
 
 .sideBar-child-home{
     margin-bottom: 5px;
-    border-bottom: 1px solid #545454;
     padding-bottom: 10x;
     padding-top: 10px;
+    border-bottom: 1px solid #545454;
 }
 .sideBar-child-mail{
     margin-bottom: 5px;
-    border-bottom: 1px solid #545454;
     padding-bottom: 10px;
     padding-top: 10px;
+    border-bottom: 1px solid #545454;
 
 }
 .sideBar-child-phone{
@@ -135,13 +136,12 @@ padding-top: px;
 
 /*MAIN*/
 .main{
-    width: 100%;
-    height: 768px;
     display: inline-block;
-    /*border: 1px solid black;*/
     position: absolute;
     top:157px;
     left:377px;
+    width: 100%;
+    height: 768px;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -155,31 +155,31 @@ padding-top: px;
 }
 .section-1-child h2{
     width: 455px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 50px;
     margin-top: 50px;
     margin-bottom: 80px;
     margin-left: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
 }
 
 .p-1{
  width: 495px;
- font-family: 'Poppins', sans-serif;
- font-style: italic;
- font-size: 28px;
  margin-top: 20px;
  margin-bottom: 80px;
  margin-left: 60px;
+ font-family: 'Poppins', sans-serif;
+ font-style: italic;
+ font-size: 28px;
 }
 .p-2{
     width: 600px;
-    color: #545454;
-    font-family: 'Poppins', sans-serif;
-    font-size: 28px;
     margin-top: 20px;
     margin-bottom:80px;
     margin-left: 60px;
+    color: #545454;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
    }
 .reloj-img{
     display: inline-block;
@@ -193,7 +193,6 @@ padding-top: px;
     margin-bottom:80px;
     margin-left: 60px;
     font-family: 'Roboto', sans-serif;
-
     font-size: 28px;
 }
 .button-lm button{
@@ -201,10 +200,10 @@ padding-top: px;
     height: 60px;
     padding: 1px;
     background-color: #B1D1A4;
-    color: #373867;
     border: 1px solid #373867;
     border-radius: 8px;
     font-weight: bold;
+    color: #373867;
 } 
 
 /*SECTION 2*/
@@ -213,48 +212,48 @@ padding-top: px;
 }
 .section-2 h2{
     width: 1500px;
+    margin-top: 20px;
+    margin-left: 110px;
+    border-bottom: 4px solid #B1D1A4; 
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 48px;
-    border-bottom: 4px solid #B1D1A4; 
-    margin-top: 20px;
-    margin-left: 110px;
     
 }
 
 .conteiner-colum{
+    margin-top: 30px;
     width: 100%;
     height: auto;
-    margin-top: 30px;
 }
 
 .colum{
     display: inline-block;
-    background-color: greenyellow;
-    border: 1px solid black;
     width: 600px;
     height: 300px;
     margin-left: 10px;
     margin-bottom: 20px;
+    background-color: greenyellow;
+    border: 1px solid black;
 }
 
 .colum-text{
-    background-color: aqua;
-    border: 1px solid black;
     width: auto;
     height: auto;
     padding: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
+    background-color: aqua;
+    border: 1px solid black;
 }
 .colum-text h3{
+    display: inline-block;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    display: inline-block;
 }
 .colum-text p{
-    font-family: 'Poppins', sans-serif;
     display: inline-block;
+    font-family: 'Poppins', sans-serif;
 }
 .colum-img img{
     display: inline-block;
@@ -270,18 +269,18 @@ padding-top: px;
 /*SECTION 3*/
 .section-3 h2{
     width: 1500px;
+    margin-top: 20px;
+    margin-left: 110px;
+    border-bottom: 4px solid #B1D1A4; 
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 48px;
-    border-bottom: 4px solid #B1D1A4; 
-    margin-top: 20px;
-    margin-left: 110px;
 }
 
 .list-conteiner{
-    border-bottom: 1px solid black;
     margin-top: 20px;
     margin-left: 110px;
+    border-bottom: 1px solid black;
 }
 
 .list-2{
@@ -298,39 +297,37 @@ padding-top: px;
 
 /*SECTION 4*/
 .section-4{
-    font-family: 'Poppins', sans-serif;
     margin-top: 50px;
     height: auto;
+    font-family: 'Poppins', sans-serif;
 }
 .section-4 h2{
     width: 1500px;
-    font-weight: bold;
-    font-size: 48px;
-    border-bottom: 4px solid #B1D1A4; 
     margin-top: 20px;
     margin-left: 110px;
     margin-bottom: 30px;
+    border-bottom: 4px solid #B1D1A4; 
+    font-weight: bold;
+    font-size: 48px;
 }
 .form{
-    background-color: #B2D1A5;
     padding: 20px;
     margin-left: 300px;
     margin-bottom: 30px;
     width: 1100px;
     height: auto;
+    background-color: #B2D1A5;
 }
 
 .form-child{
+    display: inline-block;
     width: 500px;
     height: auto;
-    /*background-color: tomato;*/
     margin-top: 20px;
     margin-left: 20px;
     font-size: 25px;
-    display: inline-block;
 }
 .form-child label{
-    /*background-color: aqua;*/
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -342,17 +339,15 @@ padding-top: px;
 }
 
 .form-child-radio{
+    display: inline-block;
     width: 500px;
     height: auto;
-    /*background-color: tomato;*/
     margin-top: 20px;
     margin-left: 20px;
     font-size: 25px;
-    display: inline-block;
 }
 
 .form-child-radio label{
-    /*background-color: aqua;*/
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -366,6 +361,8 @@ padding-top: px;
 .input-child{
     height: 40px;
     width: 300px;
+    font-size: 25px;
+    font-family: arial;
 }
 
 .radio-cheeck{
@@ -379,17 +376,17 @@ padding-top: px;
     font-weight: normal;
 }
 .form-child-textearea{
+    display: inline-block;
     width: 1000px;
     height: auto;
-    /*background-color: tomato;*/
     margin-top: 30px;
     margin-left: 20px;
     font-size: 25px;
-    display: inline-block;
     font-weight: bold;
 }
 
 .form-child-textearea textarea{
+    display: inline-block;
     width: 1000px;
     height: 190px;
     margin-top: 20px;
@@ -398,8 +395,9 @@ padding-top: px;
     border: 2px solid #9E9E9E;
     border-radius: 3px;
     background-color: #FBFCFB;
-    resize: none;
-    display: inline-block;
+    font-size: 30px;
+    font-family: arial;
+    resize: none; 
 }
 
 .submit{
@@ -411,85 +409,81 @@ padding-top: px;
     font-size: 28px;
 } 
 .submit input{
-    width: 200px;
-    height: 50px;
-    padding: 1px;
-    font-weight: bold;
-    background-color: #B1D1A4;
-    color: #373867;
-    border: 1px solid #373867;
-    border-radius: 5px;
     position: relative;
     left: 700px;
     top: 30px;
+    width: 200px;
+    height: 50px;
+    padding: 1px;
+    background-color: #B1D1A4;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #373867;
 }
 /*SECTION 5*/
 .section-5{
     width: 1200px;
-    border: 1px solid #FFFFFF;
     margin: 100px 50px 50px 350px;
     background-color: #D9E0D6;
+    border: 1px solid #FFFFFF;
     border-radius: 50%;
     font-family: 'Poppins', sans-serif;
 }
 .conteiner-one{
     display: inline-block;
-    /*background-color: yellow;*/
+    position: relative;
+    left: 70px;
     width: 450px;
     height: 500px;
     margin-left: 60px;
-    position: relative;
-    left: 70px;
 }
 .conteiner-one-child{
-    /*background-color: violet;*/
-    margin-bottom: 10px;
-    width: 400px;
     position: relative;
     top: 43px;
     left: 50px;
+    margin-bottom: 10px;
+    width: 400px;
 }
 .conteiner-one-child h2{
+    margin-left: 150px;
     font-size: 30px;
     font-weight: bold;
     color: #756464;
-    margin-left: 150px;
 }
 #history{
     margin-left: 250px;
     margin-top: 15px;
 }
 .conteiner-one-child p{
-    font-size: 15px;
-    width: 450px;
-    height: 80px;
     position: relative;
     top: 35px;
-
+    width: 450px;
+    height: 80px;
+    font-size: 15px;
 }
 .conteiner-one-child img{
-    width: 80px;
-    height: 80px;
-    margin-left: 20px;
     position: relative;
     top: 106px;
     left: 190px;
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
 }
 
 /*segunda caja amarilla*/
 .img-cont img{
-    width: 250px;
     position: relative;
     top: 125px;
+    width: 250px;
 }
 
 .conteiner-two-child{
-    /*background-color: violet;*/
+    position: relative;
+    top: 170px;
     margin-bottom: 10px;
     width: 400px;
     height: 100px;
-    position: relative;
-    top: 170px;
     font-size: 15px;
 }
 .conteiner-two-child p{
@@ -511,12 +505,12 @@ padding-top: px;
 
 .list-chil-one h2{
     width: 200px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-bottom: 4px solid #B1D1A4;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 28px;
-    border-bottom: 4px solid #B1D1A4;
-    margin-top: 20px;
-    margin-bottom: 30px;
 }
 .orden-list{
     font-family: 'Poppins', sans-serif;  
@@ -530,14 +524,13 @@ padding-top: px;
 /*FOOTER*/
 .footer{
     display: inline-block;
-    border-bottom: 1px solid black;
-    border-top: 4px solid #B1D1A4;
-    /*background-color: brown;*/
-    width: 100%;
-    height:198px;
     position: absolute;
     left:377px;
+    width: 100%;
+    height:198px;
     top:925px;
+    border-bottom: 1px solid black;
+    border-top: 4px solid #B1D1A4;
     text-align: center;
     font-family: 'Roboto', sans-serif;
 } 
