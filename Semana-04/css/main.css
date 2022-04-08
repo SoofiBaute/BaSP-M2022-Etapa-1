@@ -2,6 +2,7 @@ main{
 display: flex;
 flex-direction: column;
 font-family: 'Poppins', sans-serif;
+margin: 15px;
 }
 
 .section-1{
@@ -12,10 +13,12 @@ font-family: 'Poppins', sans-serif;
 
 .section-1 h2{
     flex-grow: 1;
-    margin: 5px;
+    height: 45px;
+    margin-top: 20px;
     color: #373867;
-    font-size: 30px;
-    font-weight: bold;  
+    font-size: 29px;
+    font-weight: bold;
+    
 }
 
 .section-1-child1{
@@ -27,6 +30,7 @@ font-family: 'Poppins', sans-serif;
 }
 .section-1-child1 p{
     flex-grow: 1;
+    width: 350px;
     margin-left: 10px;
     color: #373867;
     font-size: 28px;
@@ -42,13 +46,26 @@ font-family: 'Poppins', sans-serif;
    flex-direction: column;
    align-items: center;
    width: 100%;
-   border: 1px solid green;
+   margin-top: 10px;
+   /* border: 1px solid green; */
 }
 
 .section-1-child2 p{
-    width: 55%;
-    margin-bottom: 5%;
+
+    font-size: 24px;
+    color: #373867;
+    opacity: 0.5;
+    
 }
 
 .section-1-child2 button{
+    align-self: flex-start;
+    width: 170px;
+    height: 50px;
+    margin-top: 10px;
+    background-color: #B1D1A4;
+    border: 1px solid #373867;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #373867;
 }
