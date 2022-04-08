@@ -5,20 +5,28 @@ font-family: 'Poppins', sans-serif;
 margin: 15px;
 }
 
+.h2{
+    margin-top: 25px;
+    border-bottom: 4px solid #B1D1A4;
+    color: #373867;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 /*SECTION ONE*/
 .section-1{
     display: flex;
     flex-direction: column;
 }
 
-.section-1 h2{
+#subtitle{
     flex-grow: 1;
     height: 45px;
     margin-top: 20px;
     color: #373867;
     font-size: 29px;
     font-weight: bold;
-    
 }
 
 .section-1-child1{
@@ -48,7 +56,6 @@ margin: 15px;
 }
 
 .section-1-child2 p{
-
     font-size: 24px;
     color: #373867;
     opacity: 0.5;
@@ -63,8 +70,9 @@ margin: 15px;
     background-color: #B1D1A4;
     border: 1px solid #373867;
     border-radius: 8px;
-    font-weight: bold;
     color: #373867;
+    font-weight: bold;
+    
 }
 
 /*SECTION TWO*/
@@ -73,15 +81,6 @@ margin: 15px;
     flex-direction: column;
     margin-top: 30px;
     color: #373867;
-}
-
-.section-2 h2{
-    width: 250px;
-    margin-top: 25px;
-    border-bottom: 4px solid #B1D1A4;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 25px;
 }
 
 .conteiner-colum{
@@ -109,3 +108,22 @@ margin: 15px;
     text-align: center;
 }
 
+/*SECTION THREE*/
+.section-3{
+    display: flex;
+    /* border: 1px solid black; */
+    flex-direction: column;
+}
+
+.section-3 ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+ul li{
+    margin-bottom: 25px;
+    padding: 10px;
+    color: #373867;
+    font-size: 18px; 
+}
