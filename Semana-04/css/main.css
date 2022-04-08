@@ -127,3 +127,40 @@ ul li{
     color: #373867;
     font-size: 18px; 
 }
+
+/*SECTION FOUR*/
+.section-4{
+    display: flex;
+    flex-direction: column;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #B2D1A5;
+    border: 3px solid #9E9E9E;
+    border-radius: 2px;
+}
+
+.form-child{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 20px 10px;
+    border: 1px solid black;
+}
+.form-child label{
+    margin-bottom: 2px;
+    font-size: 20px;
+    font-weight: bold;
+} 
+
+.form-child input{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #9E9E9E;
+    border-radius: 5px;
+}
