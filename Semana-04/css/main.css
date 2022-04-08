@@ -34,6 +34,7 @@ margin: 15px;
     align-items: center;
     justify-content: space-around;
     flex-grow: 1;
+    margin: 10px;
 }
 .section-1-child1 p{
     flex-grow: 1;
@@ -157,10 +158,32 @@ ul li{
 } 
 
 .form-child input{
-    width: 300px;
-    height: 40px;
+
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
     border: 2px solid #9E9E9E;
     border-radius: 5px;
+}
+
+.form-child-textearea{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 20px 10px;
+}
+.form-child-textearea label{
+    margin-bottom: 2px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.form-child-textearea textarea{
+    margin-top: 20px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #9E9E9E;
+    border-radius: 3px;
+    background-color: #FBFCFB;
+    font-size: 30px;
+    font-family: arial;
+    resize: none; 
 }
