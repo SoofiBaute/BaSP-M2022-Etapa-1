@@ -23,7 +23,7 @@ margin: 15px;
 #subtitle{
 flex-grow: 1;
 height: 70px;
-margin-top: 40px;
+margin-top: 20px;
 color: #373867;
 font-size: 29px;
 font-weight: bold;
@@ -34,8 +34,7 @@ font-weight: bold;
     align-items: center;
     justify-content: space-around;
     flex-grow: 1;
-    margin: 10px;
-    margin-top: 20px;
+
 }
 .section-1-child1 p{
     flex-grow: 1;
@@ -89,7 +88,7 @@ font-weight: bold;
 }
 
 .h2-1{
-    margin-top: 100px;
+    margin-top: 300px;
     border-bottom: 4px solid #B1D1A4;
     color: #373867;
     font-family: 'Poppins', sans-serif;
