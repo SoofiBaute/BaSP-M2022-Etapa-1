@@ -10,7 +10,20 @@ background-color: #EDEDED;
 border-bottom:5px solid #B1D1A4;
 z-index: 1;
 }
+
 .spam-conteiner-1{
+    display: flex;
+    flex-direction: column;
+    flex-direction: center;
+    align-items: center;
+    flex-grow: 1;
+    margin:0px 5px;
+    color: #373867;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.spam-conteiner-2{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -18,8 +31,9 @@ z-index: 1;
     color: #373867;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 250%
 }
+
 .spam{
     height: 5px;
     width: 35px;
@@ -28,3 +42,12 @@ z-index: 1;
     border-radius: 10px;
 }
 
+@media only screen and (min-width: 500px){
+
+    .spam-conteiner-2{
+        font-size: 350%;
+        margin: 0;
+    }
+
+
+}
