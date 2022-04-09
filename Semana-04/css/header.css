@@ -1,4 +1,4 @@
-.header{
+header{
 display: flex;
 justify-content: center;
 align-items: center;
@@ -27,3 +27,4 @@ z-index: 1;
     background-color: #B1D1A4;
     border-radius: 10px;
 }
+
