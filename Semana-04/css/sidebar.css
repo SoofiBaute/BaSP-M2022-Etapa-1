@@ -1,3 +1,76 @@
 #leftBar{
     display: none;
 }
+
+/*SIDE BAR*/
+#leftBar{
+    flex-direction: column;
+    height: auto;
+    border: 1px solid black;
+    color: #373867;
+    background-color: #F6F6F6;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.sideBar-child{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+.conteiner-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    padding: 5%;
+    background-color: #A4A4A4;
+}
+.conteiner-input input{
+    height: 40px;
+    padding-left: 40px;
+    background-image: url(../Images/lupa.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.menu{
+    width: 155px;
+    border-bottom: 5px solid #B1D1A4;
+    font-weight: bold;
+    font-size: 28px;
+    text-decoration-color: #B1D1A4;
+}
+
+.sideBar-child-one ul li{
+    border-bottom:1px solid #545454;
+    font-size: 18px;
+}
+
+.p-getintouch{
+    font-size: 18px;
+    line-height: 25px;
+    color: #545454;
+}
+
+.sideBar-child-two-logos{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.sideBar-child-two-logos a{
+    margin-left: 5%;
+}
+
+/*MOBILE*/
+@media  only screen and (max-width: 600px){
+
+    /*SIDE BAR*/
+        #leftBar{
+            /* display: flex;  */
+        }
+}
