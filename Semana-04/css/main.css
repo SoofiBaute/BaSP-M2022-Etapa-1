@@ -266,41 +266,33 @@ ul li{
 }
 
 @media  only screen and (min-width: 600px){
-
+    /*MAIN*/
+      main{
+          margin: 0;
+          margin-top: 80px;
+      }
 
    /*SECTION ONE*/
         #subtitle{
             margin-top: 10%;
-            font-size: 330%;
+            font-size: 200%
         }
 
         .section-1-child1{
             margin-top: 10%;
         }
 
-        .section-1-child1 p{
-            font-size: 265%;
-            margin-left: 10%;
-            text-align: start;
-        }
-
         .section-1-child1 img{
-            width: 260px;
-            height: 160px;
+            width: 226px;
+            height: 115px;
             margin-right: 10%;
-        }
-
-        .section-1-child2{
-            margin-right: 10%;
-            margin-top: 10%;
         }
 
         .section-1-child2 p{
-            font-size: 24px;
-            color: #373867;
-            opacity: 0.5;
-            text-align: center;
-            margin-left: 5%;
+            margin-left: 53%;
+            margin-right: 50%;
+            width: 400px; 
+            font-size: 20px;
         }
 
         .section-1-child2 button{
@@ -317,8 +309,10 @@ ul li{
             padding: 30px;
             margin-bottom: 0;
         }
-        }
 
         .colum p {
             width: 250px;
         }
+ }
+
+    
