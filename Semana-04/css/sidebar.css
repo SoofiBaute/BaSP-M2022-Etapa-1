@@ -22,8 +22,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100px;
-    padding: 5%;
+    height: auto;
+    padding: 10%;
     background-color: #A4A4A4;
 }
 .conteiner-input input{
@@ -45,7 +45,7 @@
     text-decoration-color: #B1D1A4;
 }
 
-.sideBar-child-one ul li{
+.sideBar-child ul li{
     border-bottom:1px solid #545454;
     font-size: 18px;
 }
@@ -59,7 +59,8 @@
 .sideBar-child-two-logos{
     display: flex;
     align-items: center;
-    margin-bottom: 5%;
+    margin-bottom: 10px;
+    margin-top: 5%;
 }
 
 .sideBar-child-two-logos a{
@@ -73,4 +74,12 @@
         #leftBar{
             /* display: flex;  */
         }
+}
+/*TABLET*/
+@media  only screen and (min-width: 600px){
+    #leftBar{
+        display: flex;
+        width: 35%;
+    }
+
 }
