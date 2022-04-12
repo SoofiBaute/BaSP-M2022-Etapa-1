@@ -1,4 +1,4 @@
-header{
+header {
 display: flex;
 justify-content: center;
 align-items: center;
@@ -41,6 +41,7 @@ z-index: 1;
     border-radius: 10px;
 }
 
+/*TABLET*/
 @media only screen and (min-width: 600px){
     header{
        width: 65%;
@@ -59,6 +60,7 @@ z-index: 1;
     header{
         border-bottom: none;
         margin-bottom: 5%;
+        padding: 0;
     }
     .spam-conteiner-2{
         margin-top: 10%;

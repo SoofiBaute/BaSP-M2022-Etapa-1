@@ -105,5 +105,10 @@
     .menu {
         margin-top: 10%;
     }
+    .sideBar-child ul li{
+        font-size: 25px;
+    }
     
+    .p-getintouch{
+        font-size: 25px
 }

@@ -147,6 +147,7 @@ ul li{
     flex-direction: column;
     margin-top: 30px;
     padding: 15px;
+    color: #545454;
     background-color: #B2D1A5;
     border: 3px solid #9E9E9E;
     border-radius: 2px;
@@ -424,6 +425,11 @@ ul li{
         justify-content: flex-start;
         width: 110px;
         height: 40px;
+    }
+
+    /*SECTION FIVE*/
+    .section-5{
+
     }
 }
     
