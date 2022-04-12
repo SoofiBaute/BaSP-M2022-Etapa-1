@@ -427,9 +427,20 @@ ul li{
         height: 40px;
     }
 
-    /*SECTION FIVE*/
-    .section-5{
+      /*SECTION FIVE*/
+      .section-5{
+        margin-top: 5%;
+      }
 
+    /*SECTION SIX*/
+    .section-6{
+       flex-direction: row;
     }
+    .section-6-child{
+        width: 30%;
+        margin-left: 5%;
+        margin-top: 2%;
+    }
+
 }
     
