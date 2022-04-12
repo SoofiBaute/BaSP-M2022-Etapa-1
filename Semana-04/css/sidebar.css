@@ -20,8 +20,7 @@
     justify-content: center;
     height: auto;
     padding: 10%;
-    background-color: #A4A4A4;
-    border-right: 1px solid black;
+    background-color: #EDEDED;
 }
 
 .conteiner-input input{
@@ -111,4 +110,5 @@
     
     .p-getintouch{
         font-size: 25px
+    } 
 }
