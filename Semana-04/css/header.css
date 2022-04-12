@@ -43,30 +43,31 @@ z-index: 1;
 
 /*TABLET*/
 @media only screen and (min-width: 600px){
+
     header{
        width: 65%;
        padding: 3% 0%;
     }
+
     .spam-conteiner-2{
         font-size: 360%;
     }
-
 
 }
 
 /*DESKTOP*/
 @media  only screen and (min-width: 1000px){
-    
+
     header{
         border-bottom: none;
         margin-bottom: 5%;
         padding: 0;
     }
+
     .spam-conteiner-2{
         margin-top: 10%;
         margin-right: 5%;
         padding-bottom: 3%;
         border-bottom:5px solid #B1D1A4;
     }
-
 }

@@ -12,9 +12,11 @@ a{
 
 /*TABLET*/
 @media  only screen and (min-width: 600px){
+    
     body{
       flex-direction: row;
     }
+
     .conteiner{
         display: flex;
         flex-direction: column;
