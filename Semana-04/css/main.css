@@ -268,13 +268,13 @@ ul li{
 @media  only screen and (min-width: 600px){
     /*MAIN*/
       main{
-          margin: 0;
-          margin-top: 80px;
+          margin: 5%;
+          margin-top: 15%;
       }
 
    /*SECTION ONE*/
         #subtitle{
-            margin-top: 10%;
+            margin-top: 15%;
             font-size: 200%
         }
 
@@ -287,10 +287,13 @@ ul li{
             height: 115px;
             margin-right: 10%;
         }
+        .section-1-child2{
+            margin-top: 0;
+        }
 
         .section-1-child2 p{
-            margin-left: 53%;
-            margin-right: 50%;
+            margin: 10% 50%;
+            margin-bottom: 0;
             width: 400px; 
             font-size: 20px;
         }
@@ -301,18 +304,9 @@ ul li{
         }
 
         /*SECTION TWO*/
-        .conteiner-colum{
-            justify-content: center;
-        }
-
         .colum{
-            padding: 30px;
-            margin-bottom: 0;
+            width: 40%;
         }
-
-        .colum p {
-            width: 250px;
-        }
- }
-
+         
+    }
     
