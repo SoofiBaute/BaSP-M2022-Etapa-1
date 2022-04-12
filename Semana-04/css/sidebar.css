@@ -78,7 +78,7 @@
         display: flex;
         position: fixed;
         max-width: 35%;
-        height: 100%;
+        height: auto;
         flex-grow: 1;
         z-index: 3;
     }
@@ -102,13 +102,18 @@
       display: flex;
     }
     .menu {
-        margin-top: 10%;
+        margin-top: 5%;
     }
     .sideBar-child ul li{
         font-size: 25px;
     }
     
     .p-getintouch{
-        font-size: 25px
+        font-size: 25px;
+        margin-bottom: 10%;
     } 
+
+    .sideBar-child-two-logos a{
+        font-size: 20px;
+    }
 }
