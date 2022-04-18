@@ -1,19 +1,27 @@
 /*variables and operators*/
 
-// a) Crear dos variables numéricas y utilizar el operador suma para guardar el valor de la suma de ambos números en una 3er variable.
+
+
+// a) Create two numeric variables and use the addition operator to store the value of the sum of both numbers in a 3rd variable.
+console.log('VARIABLES AND OPERATORS a)');
+
 var num1=10, num2=5, suma;
 suma= num1+num2;
 console.log('The sum of the numbers is: ', suma);
 
 
-// b) Crear dos variables de tipo String y concatenarlas guardando el resultado en una 3er variable.
+
+// b) Create two variables of type String and concatenate them saving the result in a 3rd variable.
+console.log('VARIABLES AND OPERATORS b)');
 
 var frase1= 'hello ', frase2= 'how are you?', frase3;
 frase3= frase1+frase2;
 console.log(frase3);
 
 
-// c) Crear dos variables de tipo String y sumar el largo de cada variable (cantidad de letras del string) guardando el resultado de la suma en una 3er variable (utilizar length).
+
+// c) Create two variables of type String and add the length of each variable (number of letters in the string) saving the result of the addition in a 3rd variable (use length).
+console.log('VARIABLES AND OPERATORS c)');
 
 var palabra1= 'hello', palabra2='how are you?', longitud;
 longitud= palabra1.length + palabra2.length;
