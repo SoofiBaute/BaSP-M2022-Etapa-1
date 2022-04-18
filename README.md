@@ -19,3 +19,6 @@ This week we add styles with CSS.
 
 # Four-week
 This week we added flexbox so that the page has a responsive design on all devices (mobile, tablet, desktop).
+
+# Five-week
+This week we work exercises with javascript that include variables, operators, arrays, loops and functions.
