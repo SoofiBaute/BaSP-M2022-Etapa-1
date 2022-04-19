@@ -3,6 +3,7 @@
 
 
 // a) Create a random number between 0 and 1 using the Math.random() function, if the value is greater than or equal to 0.5, display an alert with the message “Greater than 0.5” and if not, an alert with the message “Lower than 0.5”.
+console.log('-------------------------');
 console.log('IF ELSE a)');
 
 var num = Math.random();
@@ -10,9 +11,9 @@ var num = Math.random();
 console.log(num);
 
 if(num>= 0.5){
-    alert("Greater than 0,5")
+    alert("IF ELSE a) Greater than 0,5")
 } else {
-    alert("Lower than 0,5");
+    alert("IF ELSE a) Lower than 0,5");
 }
 
 
@@ -25,9 +26,10 @@ if(num>= 0.5){
 “Adult” between 31 and 60 years old;
 “Senior Adult” between 61 and 75 years old;
 “Elderly” if he is older than 75 years.*/
+console.log('-------------------------');
 console.log('IF ELSE b)');
 
-var age = prompt("Ingrese su edad");
+var age = prompt("IF ELSE b) Ingrese su edad:");
 
 if(age<2){
     alert("Bebe");

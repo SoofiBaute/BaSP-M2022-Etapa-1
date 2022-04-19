@@ -12,6 +12,7 @@ console.log('The sum of the numbers is: ', suma);
 
 
 // b) Create two variables of type String and concatenate them saving the result in a 3rd variable.
+console.log('-------------------------');
 console.log('VARIABLES AND OPERATORS b)');
 
 var frase1= 'hello ', frase2= 'how are you?', frase3;
@@ -21,6 +22,7 @@ console.log(frase3);
 
 
 // c) Create two variables of type String and add the length of each variable (number of letters in the string) saving the result of the addition in a 3rd variable (use length).
+console.log('-------------------------');
 console.log('VARIABLES AND OPERATORS c)');
 
 var palabra1= 'hello', palabra2='how are you?', longitud;
