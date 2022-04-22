@@ -1,13 +1,13 @@
 main{ 
     display: flex;
-    height: auto;
+    height: 100%;
 }
 
 .section-4{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-top: 25%;
+    margin-top: 50%;
 }
 
 .section-4 h2{
@@ -30,11 +30,11 @@ main{
     display: flex;
     flex-direction: column;
     margin: 5px;
-    padding: 10px 40px;
+    padding: 5px 40px;
 }
 
 .form-child label{
-    margin-bottom: 5%;
+    margin-bottom: 15px;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
 }
@@ -45,6 +45,23 @@ main{
     font-family: 'Poppins', sans-serif;
     border: 2px solid #373867;
     border-radius: 5px;
+}
+
+.form-child-radio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-child-radio a{
+    color: #373867;
+    font-weight: bold;
+}
+
+.radio-conteiner{
+    margin: 20px;
+    margin-left: 0;
 }
 
 .submit{
@@ -67,6 +84,7 @@ main{
     letter-spacing:1px
 }
 
+
 /*TABLET*/
 @media  only screen and (min-width: 768px){
     .conteiner{
@@ -81,27 +99,20 @@ main{
 
 /*DESKTOP*/
 @media  only screen and (min-width: 1440px){
-    .conteiner{
-        width: 100%;
-    }
-    main{
-        width: 100%;
-        flex-grow: 1;
-    }
-    
-    .form{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        height: auto;
-        color: #373867;
-      }
+    .section-4{
 
-    .form-child{
-        margin: 5px;
-        padding: 10px 10px;
+        margin-top: 30%;
+    }
+      
+    .form{
+       align-items: center;
+    }
+
+    .form-child {
+      width: 40%;
     }
 
 }   
+
+
+
