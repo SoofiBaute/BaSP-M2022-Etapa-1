@@ -1,0 +1,109 @@
+#leftBar{
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid black;
+    background-color: #F6F6F6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sideBar-child{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.conteiner-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 10%;
+    background-color: #EDEDED;
+}
+
+.conteiner-input input{
+    height: 40px;
+    padding-left: 40px;
+    background-image: url(../Images/lupa.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.menu{
+    width: 155px;
+    border-bottom: 5px solid #B1D1A4;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.sideBar-child ul li{
+    border-bottom:1px solid #545454;
+    font-size: 18px;
+}
+
+.p-getintouch{
+    font-size: 18px;
+    line-height: 25px;
+    color: #545454;
+}
+
+.sideBar-child-two-logos{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 5%;
+}
+
+.sideBar-child-two-logos a{
+    margin-left: 5%;
+}
+
+
+/*TABLET*/
+@media  only screen and (min-width: 768px){
+    #leftBar{
+        display: flex;
+        position: fixed;
+        max-width: 35%;
+        flex-grow: 1;
+        z-index: 3;
+    }
+
+    .menu{
+        font-size: 25px;
+        margin-top: 15%;
+        margin-bottom: 5%;
+    }
+
+    .p-getintouch{
+       margin-top: 5%;
+       margin-bottom: 15%;
+    }
+}
+
+/*DESKTOP*/
+@media  only screen and (min-width: 1440px){
+
+    #leftBar{
+      display: flex;
+    }
+    .menu {
+        margin-top: 5%;
+    }
+    .sideBar-child ul li{
+        font-size: 25px;
+    }
+    
+    .p-getintouch{
+        font-size: 25px;
+        margin-bottom: 10%;
+    } 
+
+    .sideBar-child-two-logos a{
+        font-size: 20px;
+    }
+}
