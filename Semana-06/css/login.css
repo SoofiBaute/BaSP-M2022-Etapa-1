@@ -70,7 +70,7 @@ main{
     margin: 20px 0px;
 }
 
-.submit input{
+.submit button{
     align-self: flex-start;
     width: 150px;
     height: 40px;
