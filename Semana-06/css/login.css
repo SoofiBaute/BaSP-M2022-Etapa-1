@@ -84,6 +84,20 @@ main{
     letter-spacing:1px
 }
 
+.dataSend{
+    display: flex;
+    visibility: hidden;
+    width: auto;
+    height: auto;
+    margin: 20px 0px;
+    padding: 10px;
+    background-color: #B1D1A4;
+    color: #373867;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 
 /*TABLET*/
 @media  only screen and (min-width: 768px){

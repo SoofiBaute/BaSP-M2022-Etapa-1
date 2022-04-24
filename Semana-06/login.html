@@ -76,15 +76,17 @@
             <main>
                 <section class="section-4">
                     <h2 class="h2">Sign In</h2> 
-                    <form class="form">
+                    <form id="form" class="form">
                         <div class="form-child">
-                            <label for="">Name</label>
-                            <input id="inputName"class="input-child" type="texto" placeholder="name">
+                            <label for="">Email</label>
+                            <input id="input-Email" class="input-child" type="email" placeholder="name@gmail.com">
+                            <span id="emailOK"></span>
                         </div>
                         
                         <div class="form-child">
                             <label for="">Password</label>
-                            <input class="input-child" type="password" placeholder="password">
+                            <input  id="input-password" class="input-child" type="password" placeholder="password">
+                            <span id="passwordOk"></span>
                         </div>
 
                         <div class="form-child-radio">
@@ -96,8 +98,10 @@
                         </div>
 
                         <div class="submit">
-                            <button id="login" type="submit" value="Sign In">Sing In</button>
+                            <button id="login" type="button" value="login">Login</button>
                         </div>
+                        <span id="dataSend-email" class="dataSend"></span>
+                        <span id="dataSend-password" class="dataSend"></span>
                     </form>
                 </section>
             </main>
