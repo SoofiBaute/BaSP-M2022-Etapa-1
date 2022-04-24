@@ -2,8 +2,8 @@ var inputEmail = document.getElementById('input-Email');
 var inputPassword = document.getElementById('input-password');
 var validation = document.getElementById('emailOK');
 var login = document.getElementById('login');
-var dataSendEmail = document.getElementById('dataSend-email');
-var dataSendPassword = document.getElementById('dataSend-password');
+var dataSend = document.getElementById('dataSend');
+
 var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 var passwordRegex = 12;
 
@@ -17,24 +17,33 @@ login.addEventListener("click", send);
 
 //FUNCTIONS
 function send(){
-    console.log("entre a send")
-    dataSendEmail.style.visibility= "visible"
-    dataSendEmail.innerText = `
-        DATOS CORRECTAMENTE INGRESADOS`;
-        /*email:  + email + `
-        Password
-        `+ password*/
+    console.log("entre a send");
+    var email = document.getElementById('input-Email').value;
+
+    if(emailRegex.test(email)){
+        dataSend.style.background = "#B1D1A4";
+        dataSend.style.visibility= "visible";
+        dataSend.innerText = "CORRECT DATA";
+    } else {
+        dataSend.style.background = "#B20600";
+        dataSend.style.visibility= "visible";
+        dataSend.innerText = "INCORRECT DATA";
+    }
 }
 
+//FOCUS
 function myFocusFunction() {
+    var email = document.getElementById('input-Email').value;
     inputEmail.style.backgroundColor = "white";
     inputPassword.style.backgroundColor = "white";
+    dataSend.style.visibility= "hidden";
 }
 
+//BLUR
 function myBlurFunction() {
     
-    email = document.getElementById('input-Email').value;
-    password = document.getElementById('input-password').value;
+    var email = document.getElementById('input-Email').value;
+    var password = document.getElementById('input-password').value;
 
     //Validation of email
     if(emailRegex.test(email)){
