@@ -75,61 +75,63 @@
             <main>
                 <section class="section-4">
                     <h2 class="h2">Sign Up</h2> 
-                    <form class="form">
+                    <form id="form-conteiner" class="form">
                         <div class="form-child">
                             <label class="form-label" for="">Name</label>
-                            <input id="input-name" class="input-child" type="text" placeholder="Name">
+                            <input id="input-name" class="input-child" type="text" placeholder="Name" name="name">
+                            <span class="correct-inc"></span>
                         </div>
                         
                         <div class="form-child">
                             <label class="form-label" for="">Surname</label>
-                            <input id="input-surname"class="input-child" type="text" placeholder="Surname">
+                            <input id="input-surname"class="input-child" type="text" placeholder="Surname" name="surname">
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">DNI</label>
-                            <input id="input-dni"class="input-child" type="number" placeholder="DNI">
+                            <input id="input-dni"class="input-child" type="number" placeholder="DNI" name="dni">
                         </div>
     
                         <div class="form-child-date">
                             <label class="form-label" for="">Date</label>
-                            <input id="input-date"class="input-child" type="date" placeholder="Birth Date">
+                            <input id="input-date"class="input-child" type="date" placeholder="Birth Date" name="date">
                         </div>
 
                         
                         <div class="form-child">
                             <label class="form-label" for="">Phone</label>
-                            <input id="input-phone"class="input-child" type="number" placeholder="Phone">
+                            <input id="input-phone"class="input-child" type="number" placeholder="Phone" name="phone">
                         </div>
                         
                         <div class="form-child">
                             <label class="form-label" for="">Dress</label>
-                            <input id="input-dress"class="input-child" type="text" placeholder="Dress">
+                            <input id="input-dress"class="input-child" type="text" placeholder="Dress" name="dress">
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">Locality</label>
-                            <input id="input-locality"class="input-child" type="text" placeholder="Locality">
+                            <input id="input-locality"class="input-child" type="text" placeholder="Locality" name="locality">
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">Postal Code</label>
-                            <input id="input-postalCode"class="input-child" type="number" placeholder="Postal Code">
+                            <input id="input-postalCode"class="input-child" type="number" placeholder="Postal Code" name="postalCode">
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">Password</label>
-                            <input class="input-child" type="password" placeholder="Password">
+                            <input class="input-child" type="password" placeholder="Password" name="password">
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">Repeat Password</label>
-                            <input class="input-child" type="password" placeholder="Password">
+                            <input class="input-child" type="password" placeholder="Password" name="password2">
                         </div> 
 
                         <div id="mail" class="form-child">
                             <label class="form-label" for="">Email</label>
-                            <input id="input-email" class="input-child" type="email" placeholder="Email">
+                            <input id="input-email" class="input-child" type="email" placeholder="Email" name="email">
+
                             <div class="submit">
                                 <input type="submit" value="Sign Up">  
                             </div>

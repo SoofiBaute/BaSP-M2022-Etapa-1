@@ -17,9 +17,7 @@ login.addEventListener("click", send);
 
 //FUNCTIONS
 function send(){
-    console.log("entre a send");
     var email = document.getElementById('input-Email').value;
-
     if(emailRegex.test(email)){
         dataSend.style.background = "#B1D1A4";
         dataSend.style.visibility= "visible";
@@ -33,7 +31,6 @@ function send(){
 
 //FOCUS
 function myFocusFunction() {
-    var email = document.getElementById('input-Email').value;
     inputEmail.style.backgroundColor = "white";
     inputPassword.style.backgroundColor = "white";
     dataSend.style.visibility= "hidden";

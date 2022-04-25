@@ -79,6 +79,9 @@ main{
     padding: 5px 120px;
 }
 
+/*VALIDACIONES FORMULARIO*/
+
+
 /*TABLET*/
 @media  only screen and (min-width: 768px){
     .conteiner{
