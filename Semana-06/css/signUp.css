@@ -71,13 +71,7 @@ main{
     justify-content: space-between;
 }
 
-.form-child-date{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 20%;
-    padding: 5px 120px;
-}
+
 
 /*VALIDACIONES FORMULARIO*/
 #dataSend{

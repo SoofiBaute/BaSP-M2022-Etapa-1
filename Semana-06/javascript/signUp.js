@@ -12,7 +12,6 @@ var inputPassword2 = document.getElementById('input-password2');
 var signUp = document.getElementById('sign-up');
 var valName = document.getElementById('name-error');
 var error = document.getElementsByClassName('error');
-console.log(error);
 
 
 inputName.addEventListener("focus", myFocusFunctionName);
@@ -23,6 +22,9 @@ inputSurname.addEventListener("blur", myBlurFunctionSurname);
 
 inputDni.addEventListener("focus", myFocusFunctionDni);
 inputDni.addEventListener("blur", myBlurFunctionDni);
+
+inputDate.addEventListener("focus", myFocusFunctionDate);
+inputDate.addEventListener("blur", myBlurFunctionDate);
 
 inputPhone.addEventListener("focus", myFocusFunctionPhone);
 inputPhone.addEventListener("blur", myBlurFunctionPhone);
@@ -53,6 +55,7 @@ function send(e){
     var name = validationName(inputName);
     var surname = validationName(inputSurname);
     var dni = validationDni(inputDni);
+    var date = validationDate(inputDate);
     var phone =  validationDni(inputPhone);
     var email = validationEmail(inputEmail);
     var postalCode = validationPostalCode(inputPostalCode);
@@ -70,7 +73,7 @@ function send(e){
         same=false;
     }
 
-    if(name && surname && dni && phone && email && postalCode && locality && dress && same){
+    if(name && surname && dni && date && phone && email && postalCode && locality && dress && same){
         console.log("TODO CORRECTO");
         dataSend.style.background = "#B1D1A4";
         dataSend.style.visibility= "visible";
@@ -78,6 +81,7 @@ function send(e){
         NAME: ${inputName.value}
         SURNAME: ${inputSurname.value}
         DNI: ${inputDni.value}
+        DATE: ${inputDate.value}
         PHONE: ${inputPhone.value}
         EMAIL: ${inputEmail.value}
         POSTAL CODE: ${inputPostalCode.value}
@@ -142,6 +146,21 @@ function myFocusFunctionDni() {
     } else{
         inputDni.style.backgroundColor = "white";
         inputDni.style.border =  "1px solid #373867";
+    }
+}
+
+//--------------DATE
+function myFocusFunctionDate() {
+    dataSend.style.visibility= "hidden";
+    var inputDni = document.getElementById('input-date');
+    var validation= validationDate(inputDate);
+
+    if(validation){
+        inputDate.style.backgroundColor = "white";
+        inputDate.style.border =  "1px solid #373867";
+    } else{
+        inputDate.style.backgroundColor = "white";
+        inputDate.style.border =  "1px solid #373867";
     }
 }
 
@@ -295,6 +314,20 @@ function myBlurFunctionDni() {
     }else{
         inputDni.style.border = "solid 1px #B20600";
         error[2].style.visibility= "visible";
+    }
+}
+
+//--------------DATE
+function myBlurFunctionDate() {
+    var inputDate = document.getElementById('input-date');
+    var validation= validationDate(inputDate);
+
+    if(validation){
+        inputDate.style.border =  "1px solid #373867";
+        error[3].style.visibility= "hidden";
+    }else{
+        inputDate.style.border = "solid 1px #B20600";
+        error[3].style.visibility= "visible";
     }
 }
 
@@ -478,6 +511,20 @@ function validationDni(x){
     }else{
         return false;
     }
+}
+
+//--------------DATE (Debe tener 10 numeros);
+function validationDate(x){
+    dateVal= x.value;
+    var year = dateVal.substring(0,4);
+
+   for(var i=0; i<year.length; i++){
+       if(Number(year)<2005){
+           return true;
+       }else{
+           return false;
+       }
+   }
 }
 
 //--------------PHONE (Solo número y debe tener 10 números);
