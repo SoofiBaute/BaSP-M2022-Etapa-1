@@ -79,62 +79,73 @@
                         <div class="form-child">
                             <label class="form-label" for="">Name</label>
                             <input id="input-name" class="input-child" type="text" placeholder="Name" name="name">
-                            <span class="correct-inc"></span>
+                            <span id="name-error" class="error">Solo letras y debe tener más de 3 letras</span>
                         </div>
                         
                         <div class="form-child">
                             <label class="form-label" for="">Surname</label>
                             <input id="input-surname"class="input-child" type="text" placeholder="Surname" name="surname">
+                            <span id="surname-error" class="error">Solo letras y debe tener más de 3 letras</span>
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">DNI</label>
                             <input id="input-dni"class="input-child" type="number" placeholder="DNI" name="dni">
+                            <span id="dni-error" class="error">Debe tener más de 7 números</span>
                         </div>
     
                         <div class="form-child-date">
                             <label class="form-label" for="">Date</label>
                             <input id="input-date"class="input-child" type="date" placeholder="Birth Date" name="date">
+                            <span id="date-error" class="error">Debe tener 10 números</span>
                         </div>
 
                         
                         <div class="form-child">
                             <label class="form-label" for="">Phone</label>
                             <input id="input-phone"class="input-child" type="number" placeholder="Phone" name="phone">
+                            <span id="phone-error" class="error">Debe tener 10 números</span>
                         </div>
                         
                         <div class="form-child">
                             <label class="form-label" for="">Dress</label>
                             <input id="input-dress"class="input-child" type="text" placeholder="Dress" name="dress">
+                            <span id="dress" class="error">Al menos 5 caracteres con letras, números y un espacio en el medio</span>
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">Locality</label>
                             <input id="input-locality"class="input-child" type="text" placeholder="Locality" name="locality">
+                            <span id="locality-error" class="error">Texto alfanumérico y debe tener más de 3 letras</span>
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">Postal Code</label>
                             <input id="input-postalCode" class="input-child" type="number" placeholder="Postal Code" name="postalCode">
+                            <span id="postalCode-error" class="error">Debe tener entre 4 y 5 números</span>
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">Password</label>
                             <input id="input-password" class="input-child" type="password" placeholder="Password" name="password">
+                            <span id="password-error" class="error">Al menos 8 caracteres, formados por letras y números</span>
                         </div>
 
                         <div class="form-child">
                             <label class="form-label" for="">Repeat Password</label>
                             <input id="input-password2" class="input-child" type="password" placeholder="Password" name="password2">
+                            <span id="password2-error" class="error"> Al menos 8 caracteres, formados por letras y números</span>
                         </div> 
 
                         <div id="mail" class="form-child">
                             <label class="form-label" for="">Email</label>
                             <input id="input-email" class="input-child" type="email" placeholder="Email" name="email">
+                            <span id="email-error" class="error">Debe tener un formato de email válido</span>
 
                             <div class="submit">
-                                <input type="submit" value="CREATE">  
+                                <input id="sign-up" type="submit" value="CREATE">  
                             </div>
+                            <span id="dataSend" class="dataSend"></span>
                         </div>
                     </form>
                 </section>

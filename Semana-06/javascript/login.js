@@ -39,11 +39,12 @@ function send(e){
 
 //FOCUS
 function myFocusFunction() {
-    inputEmail.style.backgroundColor = "white";
     inputPassword.style.backgroundColor = "white";
     dataSend.style.visibility= "hidden";
 }
 
+
+//BLUR
 function myBlurFunctionPassword() {
     var inputPassword = document.getElementById('input-password');
     var validation= validationPassword(inputPassword);
@@ -59,7 +60,6 @@ function myBlurFunctionPassword() {
         }
 }
 
-//BLUR
 function myBlurFunctionEmail() {
     var inputEmail = document.getElementById('input-Email');
     var email = document.getElementById('input-Email').value;

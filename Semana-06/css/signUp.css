@@ -80,7 +80,26 @@ main{
 }
 
 /*VALIDACIONES FORMULARIO*/
+#dataSend{
+    display: flex;
+    align-self: center;
+    visibility: hidden;
+    height: auto;
+    margin: 20px 0px;
+    padding: 10px;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
 
+.error{
+    visibility: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #B20600;
+}
 
 /*TABLET*/
 @media  only screen and (min-width: 768px){
