@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="baute17@gmail.com">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/sidebar.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/signUp.css">
+        <title>Trackgenix SA</title>
+        <!--FONTS-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+         <!--LeftBar--> 
+        <aside ID="leftBar">
+            <div class="conteiner-input">
+                <input type="search" placeholder="search">
+            </div>
+              <div class="sideBar-child">
+                  <p class="menu">MENU</p>
+                  <nav class="sideBar-child">
+                      <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="signUp.html">Sing Up</a></li>
+                        <li><a href="login.html">Log In</a></li>
+                      </ul>
+                  </nav> 
+                  <h2 class="menu">Get in touch</h2>
+                  <p class="p-getintouch">
+                      Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, 
+                      ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. 
+                      Sed nulla amet lorem feugiat tempus aliquam.
+                  </p>
+             
+                  <div class="sideBar-child-two-logos">
+                          <img src="images/mail.png" alt="mail">
+                          <a href="#">information@trackgenix.tld</a>
+                  </div>
+                  <div class="sideBar-child-two-logos">
+                          <img src="images/home.png" alt="home">
+                          <a href="#">1234 Somewhere Road #8254
+                          Nashville, TN 00000-0000</a>
+                  </div>
+                  <div class="sideBar-child-two-logos">
+                          <img src="images/phone.png" alt="phone">
+                          <a href="#">(000) 000-0000</a>
+
+                </div>
+        </aside>
+        <div class="conteiner">
+            <header>
+                <div class="spam-conteiner-1">
+                    <div class="spam"></div>
+                    <div class="spam"></div>
+                    <div class="spam"></div>
+                </div>
+                <h1
+                    class="spam-conteiner-2">Trackgenix S.A.</h1>
+            </header>
+            <main>
+                <section class="section-4">
+                    <h2 class="h2">Sign Up</h2> 
+                    <form id="form-conteiner" class="form">
+                        <div class="form-child">
+                            <label class="form-label" for="">Name</label>
+                            <input id="input-name" class="input-child" type="text" placeholder="Name" name="name">
+                            <span id="name-error" class="error">Solo letras y debe tener más de 3 letras</span>
+                        </div>
+                        
+                        <div class="form-child">
+                            <label class="form-label" for="">Surname</label>
+                            <input id="input-surname"class="input-child" type="text" placeholder="Surname" name="surname">
+                            <span id="surname-error" class="error">Solo letras y debe tener más de 3 letras</span>
+                        </div>
+
+                        <div class="form-child">
+                            <label class="form-label" for="">DNI</label>
+                            <input id="input-dni"class="input-child" type="number" placeholder="DNI" name="dni">
+                            <span id="dni-error" class="error">Debe tener más de 7 números</span>
+                        </div>
+    
+                        <div class="form-child">
+                            <label class="form-label" for="">Date</label>
+                            <input id="input-date"class="input-child" type="date" placeholder="Birth Date" name="date">
+                            <span id="date-error" class="error">Debe ser mayor de edad</span>
+                        </div>
+
+                        
+                        <div class="form-child">
+                            <label class="form-label" for="">Phone</label>
+                            <input id="input-phone"class="input-child" type="number" placeholder="Phone" name="phone">
+                            <span id="phone-error" class="error">Debe tener 10 números</span>
+                        </div>
+                        
+                        <div class="form-child">
+                            <label class="form-label" for="">Dress</label>
+                            <input id="input-dress"class="input-child" type="text" placeholder="Dress" name="dress">
+                            <span id="dress" class="error">Al menos 5 caracteres con letras, números y un espacio en el medio</span>
+                        </div>
+
+                        <div class="form-child">
+                            <label class="form-label" for="">Locality</label>
+                            <input id="input-locality"class="input-child" type="text" placeholder="Locality" name="locality">
+                            <span id="locality-error" class="error">Texto alfanumérico y debe tener más de 3 letras</span>
+                        </div>
+
+                        <div class="form-child">
+                            <label class="form-label" for="">Postal Code</label>
+                            <input id="input-postalCode" class="input-child" type="number" placeholder="Postal Code" name="postalCode">
+                            <span id="postalCode-error" class="error">Debe tener entre 4 y 5 números</span>
+                        </div>
+
+                        <div class="form-child">
+                            <label class="form-label" for="">Password</label>
+                            <input id="input-password" class="input-child" type="password" placeholder="Password" name="password">
+                            <span id="password-error" class="error">Al menos 8 caracteres, formados por letras y números</span>
+                        </div>
+
+                        <div class="form-child">
+                            <label class="form-label" for="">Repeat Password</label>
+                            <input id="input-password2" class="input-child" type="password" placeholder="Password" name="password2">
+                            <span id="password2-error" class="error"> Al menos 8 caracteres, formados por letras y números</span>
+                        </div> 
+
+                        <div id="mail" class="form-child">
+                            <label class="form-label" for="">Email</label>
+                            <input id="input-email" class="input-child" type="email" placeholder="Email" name="email">
+                            <span id="email-error" class="error">Debe tener un formato de email válido</span>
+
+                            <div class="submit">
+                                <input id="sign-up" type="submit" value="CREATE">  
+                            </div>
+                            <span id="dataSend" class="dataSend"></span>
+                        </div>
+                    </form>
+                </section>
+            </main>
+
+
+            <footer>
+                <p class="p-1">Rosario Argentina</p>
+                <div class="network-conteiner">
+                    <a href="#"><img class="img" src="./images/linkedin.svg" alt="linkedin" width="50"></a>
+                    <a href="#"><img  class="img" src="./images/instagram.svg" alt="linkedin" width="50"></a>
+                    <a href="#"><img class="img" src="./images/facebook.svg" alt="linkedin" width="50"></a>
+                    <a href="#"><img class="img" src="./images/twitter.svg" alt="linkedin" width="50"></a>
+                </div>
+                <p class="p-2">Copyright © 2022 Radium Rocket. All rights reserved.</p>  
+            </footer>
+        </div>    
+        <script src="javascript/signUp.js"></script>
+    </body>
+</html>
