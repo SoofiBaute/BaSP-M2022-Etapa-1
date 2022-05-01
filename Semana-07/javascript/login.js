@@ -4,6 +4,9 @@ var validation = document.getElementById('emailOK');
 var validationPass = document.getElementById('passwordOk');
 var login = document.getElementById('login');
 var dataSend = document.getElementById('dataSend');
+var url ='https://basp-m2022-api-rest-server.herokuapp.com/login';
+var emailRadium = 'rose@radiumrocket.com';
+var passRadium = 'BaSP2022'
 
 var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
@@ -19,22 +22,9 @@ login.addEventListener("click", send);
 function send(e){
     e.preventDefault();
     var email = document.getElementById('input-Email').value;
-    var password = document.getElementById('input-password');
-    var passVal = validationPassword(password);
-    if(emailRegex.test(email) && passVal === true){
-        myBlurFunctionPassword();
-        myBlurFunctionEmail();
-        dataSend.style.background = "#B1D1A4";
-        dataSend.style.visibility= "visible";
-        dataSend.innerText = `CORRECT DATA 
-        EMAIL:   ${email}
-        PASSWORD: ${password.value}`;
-    } else {
-        dataSend.style.background = "#B20600";
-        dataSend.style.visibility= "visible";
-        dataSend.innerText = "INCORRECT DATA";
-        alert("COMPLETE BIEN LOS CAMPOS ANTES DE ENVIAR");
-    }
+    var password = document.getElementById('input-password').value;
+    requesValue(email, password, url);
+
 }
 
 //FOCUS
@@ -131,3 +121,35 @@ function validationPassword(x){
         return false;
     }
 };
+
+function requesValue(email, pass, url){
+
+    fetch(url + "?email=" + email + "&password=" + pass)
+    .then(function (response) {
+        return response.json();
+      })
+    .then(function (jsonResponse) {
+        if (jsonResponse.success) {
+          console.log("CORRECT", jsonResponse);
+          myBlurFunctionPassword();
+          myBlurFunctionEmail();
+          alert("CORREC DATA");
+          dataSend.style.background = "#B1D1A4";
+          dataSend.style.visibility= "visible";
+          dataSend.innerText = `CORRECT DATA 
+          EMAIL:   ${email}
+          PASSWORD: ${pass}`;
+        } else {
+            console.log("ERROR");
+            dataSend.style.background = "#B20600";
+            dataSend.style.visibility= "visible";
+            dataSend.innerText = "INCORRECT DATA";
+            alert("WRONG EMAIL OR PASSWORD");
+            throw jsonResponse;
+        }
+      })
+    .catch(function (error) {
+        console.warn('Error', error);
+    })
+    
+}
