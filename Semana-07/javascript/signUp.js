@@ -13,6 +13,8 @@ var signUp = document.getElementById('sign-up');
 var valName = document.getElementById('name-error');
 var error = document.getElementsByClassName('error');
 
+var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
+
 
 inputName.addEventListener("focus", myFocusFunctionName);
 inputName.addEventListener("blur", myBlurFunctionName);
@@ -50,8 +52,11 @@ inputPassword2.addEventListener("blur", myBlurFunctionPassword2);
 
 signUp.addEventListener("click", send);
 
+
 function send(e){
+
     e.preventDefault();
+
     var name = validationName(inputName);
     var surname = validationName(inputSurname);
     var dni = validationDni(inputDni);
@@ -65,6 +70,11 @@ function send(e){
     var passw2 = validationPassword(inputPassword2);
     var same = false;
 
+    if(date){
+        var newDate = reverseDate(inputDate.value);
+        console.log("DATE REVERSE: ", newDate);
+    }
+
     if((passw===true) && (passw2===true)){
         if(inputPassword.value === inputPassword2.value){
             same= true;
@@ -74,32 +84,83 @@ function send(e){
     }
 
     if(name && surname && dni && date && phone && email && postalCode && locality && dress && same){
-        console.log("TODO CORRECTO");
-        dataSend.style.background = "#B1D1A4";
-        dataSend.style.visibility= "visible";
-        dataSend.innerText = `CORRECT DATA 
-        NAME: ${inputName.value}
-        SURNAME: ${inputSurname.value}
-        DNI: ${inputDni.value}
-        DATE: ${inputDate.value}
-        PHONE: ${inputPhone.value}
-        EMAIL: ${inputEmail.value}
-        POSTAL CODE: ${inputPostalCode.value}
-        LOCALITY: ${inputLocality.value}
-        DRESS: ${inputDress.value}
-        PASSWORD: ${inputPassword.value}
-        `;
+        requesValue(inputName.value, inputSurname.value, inputDni.value, newDate,
+             inputPhone.value, inputDress.value, inputLocality.value,inputPostalCode.value, 
+             inputEmail.value, inputPassword.value, url);
     }else{
         alert("COMPLETE LOS DATOS CORRECTAMENTE");
-        console.log("PASW1: ", inputPassword.value);
-        console.log("PASW2:", inputPassword2.value);
         if (same===false){
             inputPassword.style.border = "solid 1px #B20600";
             inputPassword2.style.border = "solid 1px #B20600";
         }
-}
+    }
 }
 
+function requesValue(
+    name,
+    surname,
+    dni,
+    date,
+    phone,
+    address,
+    locality,
+    postalCode,
+    email,
+    pass,
+    url
+) {
+    fetch(
+        url +
+            '?name=' +
+            name +
+            '&lastName=' +
+            surname +
+            '&dni=' +
+            dni +
+            '&dob=' +
+            date +
+            '&phone=' +
+            phone +
+            '&address=' +
+            address +
+            '&city=' +
+            locality +
+            '&zip=' +
+            postalCode +
+            '&email=' +
+            email +
+            '&password=' +
+            pass,
+    )
+    .then(function (response) {
+        return response.json();
+      })
+    .then(function (jsonResponse) {
+        if (jsonResponse.success) {
+          console.log("CORRECT", jsonResponse);
+          dataSend.style.background = "#B1D1A4";
+          dataSend.style.visibility= "visible";
+          dataSend.innerText = `CORRECT DATA 
+          NAME: ${inputName.value}
+          SURNAME: ${inputSurname.value}
+          DNI: ${inputDni.value}
+          DATE: ${inputDate.value}
+          PHONE: ${inputPhone.value}
+          EMAIL: ${inputEmail.value}
+          POSTAL CODE: ${inputPostalCode.value}
+          LOCALITY: ${inputLocality.value}
+          DRESS: ${inputDress.value}
+          PASSWORD: ${inputPassword.value}
+          `;
+        } else {
+            alert("COMPLETE LOS DATOS CORRECTAMENTE");
+            throw jsonResponse;
+        }
+      })
+    .catch(function (error) {
+        console.warn('Error', error);
+    })
+}
 
 //FOCUS
 //--------------NAME
@@ -152,7 +213,7 @@ function myFocusFunctionDni() {
 //--------------DATE
 function myFocusFunctionDate() {
     dataSend.style.visibility= "hidden";
-    var inputDni = document.getElementById('input-date');
+    var inputDate = document.getElementById('input-date');
     var validation= validationDate(inputDate);
 
     if(validation){
@@ -434,7 +495,7 @@ function myBlurFunctionPassword2() {
 
 
 //VALIDATIONS
-//--------------NAME && SURNAME (Solo letras y debe tener más de 3 letras)
+//--------------NAME && SURNAME 
 function validationName (x){
     var cont=0;
     var letters=0;
@@ -491,7 +552,7 @@ function validationName (x){
     }
 }
 
-//--------------DNI (Solo número y debe tener más de 7 números);
+//--------------DNI 
 function validationDni(x){
     var cont = 1;
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -513,21 +574,46 @@ function validationDni(x){
     }
 }
 
-//--------------DATE (Debe tener 10 numeros);
+//--------------DATE 
 function validationDate(x){
+    
     dateVal= x.value;
+    var cont = 0;
     var year = dateVal.substring(0,4);
+    var month = dateVal.substring(5,7);
+    var day = dateVal.substring(8,10);
 
-   for(var i=0; i<year.length; i++){
-       if(Number(year)<2005){
+
+        if((month.substring(0,1)==="0") && (month.substring(1,2)>0 && month.substring(1,2)<10)){
+            cont++;
+        } else if ((month.substring(0,1)==="1") && (month.substring(1,2)<10)){
+            cont++;
+        }
+
+        if((day.substring(0,1)==="0") && (day.substring(1,2)>0 && day.substring(1,2)<10)){
+            cont++;
+        } else if ((day.substring(0,1)==="1") && (day.substring(1,2)<10)){
+            cont++;
+        }
+
+       if((Number(year)<2005) && (cont===2)){
            return true;
        }else{
            return false;
        }
-   }
+
 }
 
-//--------------PHONE (Solo número y debe tener 10 números);
+function reverseDate(x){
+    dateValue= x.value;
+    var year = dateVal.substring(0,4);
+    var month = dateVal.substring(5,7);
+    var day = dateVal.substring(8,10);
+    var dateNew = month+"/"+day+"/"+year;
+    return dateNew;
+}
+
+//--------------PHONE 
 function validationPhone(x){
     var cont = 1;
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -547,7 +633,7 @@ function validationPhone(x){
     }
 }
 
-//--------------EMAIl (Debe tener un formato de email válido.)
+//--------------EMAIl 
 function validationEmail(x){
 
     var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
@@ -559,7 +645,7 @@ function validationEmail(x){
     }
 };
 
-//--------------POSTAL CODE (Solo número y debe tener entre 4 y 5 números.)
+//--------------POSTAL CODE 
 function validationPostalCode(x){
     var cont = 1;
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -579,7 +665,7 @@ function validationPostalCode(x){
     }
 };
 
-//--------------LOCALITY (Texto alfanumérico y debe tener más de 3 letras.)
+//--------------LOCALITY 
 function validationLocality(x){
     var cont=0;
     var letters=0;
@@ -637,7 +723,7 @@ function validationLocality(x){
     }
 };
 
-//--------------DRESS (Al menos 5 caracteres con letras, números y un espacio en el medio.)
+//--------------DRESS 
 function validationDress(x){
     var space = " ";
     var bolL= 0;
@@ -703,7 +789,7 @@ function validationDress(x){
 }
 
 
-//--------------PASSWORD (Al menos 8 caracteres, formados por letras y números.)
+//--------------PASSWORD 
 function validationPassword(x){
     var cont=0;
     var letters=0;

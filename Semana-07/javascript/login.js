@@ -5,8 +5,6 @@ var validationPass = document.getElementById('passwordOk');
 var login = document.getElementById('login');
 var dataSend = document.getElementById('dataSend');
 var url ='https://basp-m2022-api-rest-server.herokuapp.com/login';
-var emailRadium = 'rose@radiumrocket.com';
-var passRadium = 'BaSP2022'
 
 var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
