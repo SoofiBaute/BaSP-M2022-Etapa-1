@@ -3,7 +3,7 @@ var inputSurname = document.getElementById('input-surname');
 var inputDni = document.getElementById('input-dni');
 var inputDate = document.getElementById('input-date');
 var inputPhone = document.getElementById('input-phone');
-var inputDress = document.getElementById('input-dress');
+var inputAddress = document.getElementById('input-address');
 var inputLocality = document.getElementById('input-locality');
 var inputPostalCode = document.getElementById('input-postalCode');
 var inputEmail = document.getElementById('input-email');
@@ -40,8 +40,8 @@ inputPostalCode.addEventListener("blur", myBlurFunctionPostalCode);
 inputLocality.addEventListener("focus", myFocusFunctionLocality);
 inputLocality.addEventListener("blur", myBlurFunctionLocality);
 
-inputDress.addEventListener("focus", myFocusFunctionDress);
-inputDress.addEventListener("blur", myBlurFunctionDress);
+inputAddress.addEventListener("focus", myFocusFunctionAddress);
+inputAddress.addEventListener("blur", myBlurFunctionAddress);
 
 
 inputPassword.addEventListener("focus", myFocusFunctionPassword);
@@ -65,7 +65,7 @@ function send(e){
     var email = validationEmail(inputEmail);
     var postalCode = validationPostalCode(inputPostalCode);
     var locality = validationLocality(inputLocality);
-    var dress = validationDress(inputDress);
+    var address = validationAddress(inputAddress);
     var passw = validationPassword(inputPassword);
     var passw2 = validationPassword(inputPassword2);
     var same = false;
@@ -83,9 +83,9 @@ function send(e){
         same=false;
     }
 
-    if(name && surname && dni && date && phone && email && postalCode && locality && dress && same){
+    if(name && surname && dni && date && phone && email && postalCode && locality && address && same){
         requesValue(inputName.value, inputSurname.value, inputDni.value, newDate,
-             inputPhone.value, inputDress.value, inputLocality.value,inputPostalCode.value, 
+             inputPhone.value, inputAddress.value, inputLocality.value,inputPostalCode.value, 
              inputEmail.value, inputPassword.value, url);
     }else{
         alert("COMPLETE LOS DATOS CORRECTAMENTE");
@@ -149,7 +149,7 @@ function requesValue(
           EMAIL: ${inputEmail.value}
           POSTAL CODE: ${inputPostalCode.value}
           LOCALITY: ${inputLocality.value}
-          DRESS: ${inputDress.value}
+          ADDRESS: ${inputAddress.value}
           PASSWORD: ${inputPassword.value}
           `;
         } else {
@@ -285,18 +285,18 @@ function myFocusFunctionLocality() {
     }
 }
 
-//--------------DRESS
-function myFocusFunctionDress() {
+//--------------ADDRESS
+function myFocusFunctionAddress() {
     dataSend.style.visibility= "hidden";
-    var inputDress = document.getElementById('input-dress');
-    var validation= validationDress(inputDress);
+    var inputAddress = document.getElementById('input-address');
+    var validation= validationAddress(inputAddress);
 
     if(validation){
-        inputDress.style.backgroundColor = "white";
-        inputDress.style.border =  "1px solid #373867";
+        inputAddress.style.backgroundColor = "white";
+        inputAddress.style.border =  "1px solid #373867";
     } else{
-        inputDress.style.backgroundColor = "white";
-        inputDress.style.border =  "1px solid #373867";
+        inputAddress.style.backgroundColor = "white";
+        inputAddress.style.border =  "1px solid #373867";
     }
 }
 
@@ -448,16 +448,16 @@ function myBlurFunctionLocality() {
     }
 }
 
-//--------------DRESS
-function myBlurFunctionDress() {
-    var inputDress = document.getElementById('input-dress');
-    var validation= validationDress(inputDress);
+//--------------ADDRESS
+function myBlurFunctionAddress() {
+    var inputAddress = document.getElementById('input-address');
+    var validation= validationAddress(inputAddress);
 
     if(validation){
-        inputDress.style.border =  "1px solid #373867";
+        inputAddress.style.border =  "1px solid #373867";
         error[5].style.visibility= "hidden";
     }else{
-        inputDress.style.border = "solid 1px #B20600";
+        inputAddress.style.border = "solid 1px #B20600";
         error[5].style.visibility= "visible";
     }
 }
@@ -723,8 +723,8 @@ function validationLocality(x){
     }
 };
 
-//--------------DRESS 
-function validationDress(x){
+//--------------ADDRESS 
+function validationAddress(x){
     var space = " ";
     var bolL= 0;
     var bolN = 0;
