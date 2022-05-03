@@ -135,6 +135,10 @@ font-weight: bold;
     margin-top: 20px;
 }
 
+.list-2 li{
+    padding: 30px;
+}
+
 /*SECTION FOUR*/
 .section-4{
     display: flex;
@@ -248,6 +252,11 @@ font-weight: bold;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     line-height: 25px;
+}
+
+.section-5 p{
+  margin-top: 10px;  
+  line-height: 40px;
 }
 
 

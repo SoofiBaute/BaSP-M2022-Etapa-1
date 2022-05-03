@@ -1,99 +1,40 @@
-var inputName = document.getElementById('input-name');
-var inputSurname = document.getElementById('input-surname');
-var inputDni = document.getElementById('input-dni');
-var inputDate = document.getElementById('input-date');
-var inputPhone = document.getElementById('input-phone');
-var inputAddress = document.getElementById('input-address');
-var inputLocality = document.getElementById('input-locality');
-var inputPostalCode = document.getElementById('input-postalCode');
-var inputEmail = document.getElementById('input-email');
-var inputPassword = document.getElementById('input-password');
-var inputPassword2 = document.getElementById('input-password2');
+var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var alf = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','u','v','w','x','y','z',];
 var signUp = document.getElementById('sign-up');
-var valName = document.getElementById('name-error');
 var error = document.getElementsByClassName('error');
-
 var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
 
-
-inputName.addEventListener("focus", myFocusFunctionName);
-inputName.addEventListener("blur", myBlurFunctionName);
-
-inputSurname.addEventListener("focus", myFocusFunctionSurname);
-inputSurname.addEventListener("blur", myBlurFunctionSurname);
-
-inputDni.addEventListener("focus", myFocusFunctionDni);
-inputDni.addEventListener("blur", myBlurFunctionDni);
-
-inputDate.addEventListener("focus", myFocusFunctionDate);
-inputDate.addEventListener("blur", myBlurFunctionDate);
-
-inputPhone.addEventListener("focus", myFocusFunctionPhone);
-inputPhone.addEventListener("blur", myBlurFunctionPhone);
-
-inputEmail.addEventListener("focus", myFocusFunctionEmail);
-inputEmail.addEventListener("blur", myBlurFunctionEmail);
-
-inputPostalCode.addEventListener("focus", myFocusFunctionPostalCode);
-inputPostalCode.addEventListener("blur", myBlurFunctionPostalCode);
-
-inputLocality.addEventListener("focus", myFocusFunctionLocality);
-inputLocality.addEventListener("blur", myBlurFunctionLocality);
-
-inputAddress.addEventListener("focus", myFocusFunctionAddress);
-inputAddress.addEventListener("blur", myBlurFunctionAddress);
-
-
-inputPassword.addEventListener("focus", myFocusFunctionPassword);
-inputPassword.addEventListener("blur", myBlurFunctionPassword);
-
-inputPassword2.addEventListener("focus", myFocusFunctionPassword2);
-inputPassword2.addEventListener("blur", myBlurFunctionPassword2);
+var invalidChars = ['-', '+', 'e', '.']
+function validateChars(e){
+    if (invalidChars.includes(e.key)) {
+        e.preventDefault();
+    }
+}  
 
 signUp.addEventListener("click", send);
-
 
 function send(e){
 
     e.preventDefault();
 
-    var name = validationName(inputName);
-    var surname = validationName(inputSurname);
-    var dni = validationDni(inputDni);
+    var same = samePassword(inputPassword.value,inputPassword2.value);
     var date = validationDate(inputDate);
-    var phone =  validationDni(inputPhone);
-    var email = validationEmail(inputEmail);
-    var postalCode = validationPostalCode(inputPostalCode);
-    var locality = validationLocality(inputLocality);
-    var address = validationAddress(inputAddress);
-    var passw = validationPassword(inputPassword);
-    var passw2 = validationPassword(inputPassword2);
-    var same = false;
+
+    if(same === false){
+        alert("INCORRECT PASSWORD");
+        inputPassword.style.border = 'solid 1px red';
+        inputPassword2.style.border = 'solid 1px red';
+        inputPassword.value = "";
+        inputPassword2.value = "";
+    }
 
     if(date){
         var newDate = reverseDate(inputDate.value);
-        console.log("DATE REVERSE: ", newDate);
     }
 
-    if((passw===true) && (passw2===true)){
-        if(inputPassword.value === inputPassword2.value){
-            same= true;
-        }
-    }else{
-        same=false;
-    }
-
-    if(name && surname && dni && date && phone && email && postalCode && locality && address && same){
-        requesValue(inputName.value, inputSurname.value, inputDni.value, newDate,
-             inputPhone.value, inputAddress.value, inputLocality.value,inputPostalCode.value, 
-             inputEmail.value, inputPassword.value, url);
-    }else{
-        alert("COMPLETE LOS DATOS CORRECTAMENTE");
-        if (same===false){
-            inputPassword.style.border = "solid 1px #B20600";
-            inputPassword2.style.border = "solid 1px #B20600";
-        }
-    }
+    requesValue(inputName.value, inputSurname.value, inputDni.value, newDate,
+    inputPhone.value, inputAddress.value, inputLocality.value,inputPostalCode.value, 
+    inputEmail.value, inputPassword.value, url);
 }
 
 function requesValue(
@@ -138,6 +79,8 @@ function requesValue(
     .then(function (jsonResponse) {
         if (jsonResponse.success) {
           console.log("CORRECT", jsonResponse);
+          myLocalStorage();
+          alert(jsonResponse.msg);
           dataSend.style.background = "#B1D1A4";
           dataSend.style.visibility= "visible";
           dataSend.innerText = `CORRECT DATA 
@@ -153,7 +96,12 @@ function requesValue(
           PASSWORD: ${inputPassword.value}
           `;
         } else {
-            alert("COMPLETE LOS DATOS CORRECTAMENTE");
+            alert("COMPLETE THE DATE CORRECTLY");
+            var saveErrors = '';
+            for (var i=0; i<jsonResponse.errors.length; i++){
+                saveErrors+= jsonResponse.errors[i].msg + '\n';
+            }
+            alert(saveErrors);
             throw jsonResponse;
         }
       })
@@ -162,372 +110,396 @@ function requesValue(
     })
 }
 
-//FOCUS
-//--------------NAME
-function myFocusFunctionName() {
-    dataSend.style.visibility= "hidden";
-    var inputName = document.getElementById('input-name');
-    var validation= validationName(inputName);
-
-    if(validation){
-        inputName.style.backgroundColor = "white";
-        inputName.style.border =  "1px solid #373867";
-        error[1].style.visibility= "hidden";
-    } else{
-        inputName.style.backgroundColor = "white";
-        inputName.style.border =  "1px solid #373867";
-    }
+function myLocalStorage(){
+    localStorage.setItem('name', inputName.value);
+    localStorage.setItem('last-name', inputSurname.value);
+    localStorage.setItem('dni', inputDni.value);
+    localStorage.setItem('date', inputDate.value);
+    localStorage.setItem('phone', inputPhone.value);
+    localStorage.setItem('address', inputAddress.value);
+    localStorage.setItem('locality', inputLocality.value);
+    localStorage.setItem('postal-code', inputPostalCode.value);
+    localStorage.setItem('email', inputEmail.value);
+    localStorage.setItem('password', inputPassword.value);
+    localStorage.setItem('password2', inputPassword2.value);
 }
 
-//--------------SURNAME
-function myFocusFunctionSurname() {
-    dataSend.style.visibility= "hidden";
-    var inputSurname = document.getElementById('input-surname');
-    var validation= validationName(inputSurname);
-
-    if(validation){
-        inputSurname.style.backgroundColor = "white";
-        inputSurname.style.border =  "1px solid #373867";
-
-    } else{
-        inputSurname.style.backgroundColor = "white";
-        inputSurname.style.border =  "1px solid #373867";
-    }
+window.onload = function(){
+    if( localStorage.getItem('name') != null &&
+        localStorage.getItem('last-name') != null &&
+        localStorage.getItem('dni') != null &&
+        localStorage.getItem('date') != null &&
+        localStorage.getItem('phone') != null &&
+        localStorage.getItem('address') != null &&
+        localStorage.getItem('locality') != null &&
+        localStorage.getItem('postal-code') != null &&
+        localStorage.getItem('email') != null &&
+        localStorage.getItem('password') != null &&
+        localStorage.getItem('password2') != null)
+         {
+            inputName.value = localStorage.getItem('name');
+            inputSurname.value = localStorage.getItem('last-name');
+            inputDni.value = localStorage.getItem('dni');
+            inputDate.value = localStorage.getItem('date');
+            inputPhone.value = localStorage.getItem('phone');
+            inputAddress.value = localStorage.getItem('address');
+            inputLocality.value = localStorage.getItem('locality');
+            inputPostalCode.value = localStorage.getItem('postal-code');
+            inputEmail.value = localStorage.getItem('email');
+            inputPassword.value = localStorage.getItem('password');
+            inputPassword2.value = localStorage.getItem('password2');
+        }
 }
 
-//--------------DNI
-function myFocusFunctionDni() {
-    dataSend.style.visibility= "hidden";
-    var inputDni = document.getElementById('input-dni');
-    var validation= validationDni(inputSurname);
-
-    if(validation){
-        inputDni.style.backgroundColor = "white";
-        inputDni.style.border =  "1px solid #373867";
-    } else{
-        inputDni.style.backgroundColor = "white";
-        inputDni.style.border =  "1px solid #373867";
+//-------------NAME    
+var inputName = document.getElementById('input-name');
+    function myFocusFunctionName() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationName(inputName);
+    
+        if(validation){
+            inputName.style.backgroundColor = "white";
+            inputName.style.border =  "1px solid #373867";
+            error[1].style.visibility= "hidden";
+        } else{
+            inputName.style.backgroundColor = "white";
+            inputName.style.border =  "1px solid #373867";
+        }
     }
-}
-
-//--------------DATE
-function myFocusFunctionDate() {
-    dataSend.style.visibility= "hidden";
-    var inputDate = document.getElementById('input-date');
-    var validation= validationDate(inputDate);
-
-    if(validation){
-        inputDate.style.backgroundColor = "white";
-        inputDate.style.border =  "1px solid #373867";
-    } else{
-        inputDate.style.backgroundColor = "white";
-        inputDate.style.border =  "1px solid #373867";
+    function myBlurFunctionName() {
+    
+        var validation= validationName(inputName);
+    
+        if(validation){
+            inputName.style.border =  "1px solid #373867";
+            error[0].style.visibility= "hidden";
+        }else{
+            inputName.style.border = "solid 1px #B20600";
+            error[0].style.visibility= "visible";
+        }
     }
-}
-
-//--------------PHONE
-function myFocusFunctionPhone() {
-    dataSend.style.visibility= "hidden";
-    var inputPhone = document.getElementById('input-phone');
-    var validation= validationPhone(inputPhone);
-
-    if(validation){
-        inputPhone.style.backgroundColor = "white";
-        inputPhone.style.border =  "1px solid #373867";
-    } else{
-        inputPhone.style.backgroundColor = "white";
-        inputPhone.style.border =  "1px solid #373867";
+    
+inputName.addEventListener("focus", myFocusFunctionName);
+inputName.addEventListener("blur", myBlurFunctionName);
+    
+    
+//-------------SURNAME    
+var inputSurname = document.getElementById('input-surname');
+    function myFocusFunctionSurname() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationName(inputSurname);
+    
+        if(validation){
+            inputSurname.style.backgroundColor = "white";
+            inputSurname.style.border =  "1px solid #373867";
+    
+        } else{
+            inputSurname.style.backgroundColor = "white";
+            inputSurname.style.border =  "1px solid #373867";
+        }
     }
-}
-
-//--------------EMAIL
-function myFocusFunctionEmail() {
-    dataSend.style.visibility= "hidden";
-    var inputEmail = document.getElementById('input-email');
-    var validation= validationEmail(inputEmail);
-
-    if(validation){
-        inputEmail.style.backgroundColor = "white";
-        inputEmail.style.border =  "1px solid #373867";
-    } else{
-        inputEmail.style.backgroundColor = "white";
-        inputEmail.style.border =  "1px solid #373867";
+    function myBlurFunctionSurname() {
+    
+        var validation= validationName(inputSurname);
+    
+        if(validation){
+            inputSurname.style.border =  "1px solid #373867";
+            error[1].style.visibility= "hidden";
+    
+        }else{
+            inputSurname.style.border = "solid 1px #B20600";
+            error[1].style.visibility= "visible";
+        }
     }
-}
+    
+inputSurname.addEventListener("focus", myFocusFunctionSurname);
+inputSurname.addEventListener("blur", myBlurFunctionSurname);
+    
 
-//--------------POSTAL-CODE
-function myFocusFunctionPostalCode() {
-    dataSend.style.visibility= "hidden";
-    var inputPostalCode = document.getElementById('input-postalCode');
-    var validation= validationPostalCode(inputPostalCode);
-
-    if(validation){
-        inputPostalCode.style.backgroundColor = "white";
-        inputPostalCode.style.border =  "1px solid #373867";
-    } else{
-        inputPostalCode.style.backgroundColor = "white";
-        inputPostalCode.style.border =  "1px solid #373867";
+//-------------DNI    
+var inputDni = document.getElementById('input-dni');
+    function myFocusFunctionDni() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationDni(inputSurname);
+    
+        if(validation){
+            inputDni.style.backgroundColor = "white";
+            inputDni.style.border =  "1px solid #373867";
+        } else{
+            inputDni.style.backgroundColor = "white";
+            inputDni.style.border =  "1px solid #373867";
+        }
     }
-}
+    function myBlurFunctionDni() {
+       
+        var validation= validationDni(inputDni);
 
-//--------------LOCALITY
-function myFocusFunctionLocality() {
-    dataSend.style.visibility= "hidden";
-    var inputLocality = document.getElementById('input-locality');
-    var validation= validationLocality(inputLocality);
-
-    if(validation){
-        inputLocality.style.backgroundColor = "white";
-        inputLocality.style.border =  "1px solid #373867";
-    } else{
-        inputLocality.style.backgroundColor = "white";
-        inputLocality.style.border =  "1px solid #373867";
+        if(validation){
+            inputDni.style.border =  "1px solid #373867";
+            error[2].style.visibility= "hidden";
+        }else{
+            inputDni.style.border = "solid 1px #B20600";
+            error[2].style.visibility= "visible";
+        }
     }
-}
+    
+inputDni.addEventListener("focus", myFocusFunctionDni);
+inputDni.addEventListener("blur", myBlurFunctionDni);
+inputDni.addEventListener('keydown', validateChars);
 
-//--------------ADDRESS
-function myFocusFunctionAddress() {
-    dataSend.style.visibility= "hidden";
-    var inputAddress = document.getElementById('input-address');
-    var validation= validationAddress(inputAddress);
 
-    if(validation){
-        inputAddress.style.backgroundColor = "white";
-        inputAddress.style.border =  "1px solid #373867";
-    } else{
-        inputAddress.style.backgroundColor = "white";
-        inputAddress.style.border =  "1px solid #373867";
+  
+
+//-------------DATE     
+var inputDate = document.getElementById('input-date');
+    function myFocusFunctionDate() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationDate(inputDate);
+    
+        if(validation){
+            inputDate.style.backgroundColor = "white";
+            inputDate.style.border =  "1px solid #373867";
+        } else{
+            inputDate.style.backgroundColor = "white";
+            inputDate.style.border =  "1px solid #373867";
+        }
+    }  
+    function myBlurFunctionDate() {
+      
+        var validation= validationDate(inputDate);
+    
+        if(validation){
+            inputDate.style.border =  "1px solid #373867";
+            error[3].style.visibility= "hidden";
+        }else{
+            inputDate.style.border = "solid 1px #B20600";
+            error[3].style.visibility= "visible";
+        }
     }
-}
-
-//--------------PASSWORD 
-function myFocusFunctionPassword() {
-    dataSend.style.visibility= "hidden";
-    var inputPassword = document.getElementById('input-password');
-    var validation= validationPassword(inputPassword);
-
-    if(validation){
-        inputPassword.style.backgroundColor = "white";
-        inputPassword.style.border =  "1px solid #373867";
-    } else{
-        inputPassword.style.backgroundColor = "white";
-        inputPassword.style.border =  "1px solid #373867";
+    
+inputDate.addEventListener("focus", myFocusFunctionDate);
+inputDate.addEventListener("blur", myBlurFunctionDate);
+    
+    
+//-------------PHONE    
+var inputPhone = document.getElementById('input-phone');
+    function myFocusFunctionPhone() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationPhone(inputPhone);
+    
+        if(validation){
+            inputPhone.style.backgroundColor = "white";
+            inputPhone.style.border =  "1px solid #373867";
+        } else{
+            inputPhone.style.backgroundColor = "white";
+            inputPhone.style.border =  "1px solid #373867";
+        }
     }
-}
-
-//--------------PASSWORD 2
-function myFocusFunctionPassword2() {
-    dataSend.style.visibility= "hidden";
-    var inputPassword2 = document.getElementById('input-password2');
-    var validation= validationPassword(inputPassword2);
-
-    if(validation){
-        inputPassword2.style.backgroundColor = "white";
-        inputPassword2.style.border =  "1px solid #373867";
-    } else{
-        inputPassword2.style.backgroundColor = "white";
-        inputPassword2.style.border =  "1px solid #373867";
+    function myBlurFunctionPhone() {
+        
+        var validation= validationPhone(inputPhone);
+    
+        if(validation){
+            inputPhone.style.border =  "1px solid #373867";
+            error[4].style.visibility= "hidden";
+        }else{
+            inputPhone.style.border = "solid 1px #B20600";
+            error[4].style.visibility= "visible";
+        }
     }
-}
-
-
-
-
-
-//BLUR
-//--------------NAME
-function myBlurFunctionName() {
-    var inputName = document.getElementById('input-name');
-    var validation= validationName(inputName);
-
-    if(validation){
-        inputName.style.border =  "1px solid #373867";
-        error[0].style.visibility= "hidden";
-    }else{
-        inputName.style.border = "solid 1px #B20600";
-        error[0].style.visibility= "visible";
+    
+inputPhone.addEventListener("focus", myFocusFunctionPhone);
+inputPhone.addEventListener("blur", myBlurFunctionPhone);
+inputPhone.addEventListener('keydown', validateChars);
+    
+//-------------ADDRESS     
+var inputAddress = document.getElementById('input-address');
+    function myFocusFunctionAddress() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationAddress(inputAddress);
+    
+        if(validation){
+            inputAddress.style.backgroundColor = "white";
+            inputAddress.style.border =  "1px solid #373867";
+        } else{
+            inputAddress.style.backgroundColor = "white";
+            inputAddress.style.border =  "1px solid #373867";
+        }
     }
-}
-
-//--------------SURNAME
-function myBlurFunctionSurname() {
-    var inputSurname = document.getElementById('input-surname');
-    var validation= validationName(inputSurname);
-
-    if(validation){
-        inputSurname.style.border =  "1px solid #373867";
-        error[1].style.visibility= "hidden";
-
-    }else{
-        inputSurname.style.border = "solid 1px #B20600";
-        error[1].style.visibility= "visible";
+    function myBlurFunctionAddress() {
+       
+        var validation= validationAddress(inputAddress);
+    
+        if(validation){
+            inputAddress.style.border =  "1px solid #373867";
+            error[5].style.visibility= "hidden";
+        }else{
+            inputAddress.style.border = "solid 1px #B20600";
+            error[5].style.visibility= "visible";
+        }
     }
-}
+    
+inputAddress.addEventListener("focus", myFocusFunctionAddress);
+inputAddress.addEventListener("blur", myBlurFunctionAddress);
+    
 
-//--------------DNI
-function myBlurFunctionDni() {
-    var inputDni = document.getElementById('input-dni');
-    var validation= validationDni(inputDni);
-
-    if(validation){
-        inputDni.style.border =  "1px solid #373867";
-        error[2].style.visibility= "hidden";
-    }else{
-        inputDni.style.border = "solid 1px #B20600";
-        error[2].style.visibility= "visible";
+//-------------LOCALITY   
+var inputLocality = document.getElementById('input-locality');
+    function myFocusFunctionLocality() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationLocality(inputLocality);
+    
+        if(validation){
+            inputLocality.style.backgroundColor = "white";
+            inputLocality.style.border =  "1px solid #373867";
+        } else{
+            inputLocality.style.backgroundColor = "white";
+            inputLocality.style.border =  "1px solid #373867";
+        }
     }
-}
-
-//--------------DATE
-function myBlurFunctionDate() {
-    var inputDate = document.getElementById('input-date');
-    var validation= validationDate(inputDate);
-
-    if(validation){
-        inputDate.style.border =  "1px solid #373867";
-        error[3].style.visibility= "hidden";
-    }else{
-        inputDate.style.border = "solid 1px #B20600";
-        error[3].style.visibility= "visible";
+    function myBlurFunctionLocality() {
+       
+        var validation= validationLocality(inputLocality);
+    
+        if(validation){
+            inputLocality.style.border =  "1px solid #373867";
+            error[6].style.visibility= "hidden";
+        }else{
+            inputLocality.style.border = "solid 1px #B20600";
+            error[6].style.visibility= "visible";
+        }
     }
-}
-
-//--------------PHONE
-function myBlurFunctionPhone() {
-    var inputPhone = document.getElementById('input-phone');
-    var validation= validationPhone(inputPhone);
-
-    if(validation){
-        inputPhone.style.border =  "1px solid #373867";
-        error[4].style.visibility= "hidden";
-    }else{
-        inputPhone.style.border = "solid 1px #B20600";
-        error[4].style.visibility= "visible";
+    
+inputLocality.addEventListener("focus", myFocusFunctionLocality);
+inputLocality.addEventListener("blur", myBlurFunctionLocality);
+    
+    
+//-------------POSTALCODE    
+var inputPostalCode = document.getElementById('input-postalCode');
+    function myFocusFunctionPostalCode() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationPostalCode(inputPostalCode);
+    
+        if(validation){
+            inputPostalCode.style.backgroundColor = "white";
+            inputPostalCode.style.border =  "1px solid #373867";
+        } else{
+            inputPostalCode.style.backgroundColor = "white";
+            inputPostalCode.style.border =  "1px solid #373867";
+        }
     }
-}
-
-//--------------EMAIL
-function myBlurFunctionEmail() {
-    var inputEmail = document.getElementById('input-email');
-    var validation= validationEmail(inputEmail);
-
-    if(validation){
-        inputEmail.style.border =  "1px solid #373867";
-        error[10].style.visibility= "hidden";
-    }else{
-        inputEmail.style.border = "solid 1px #B20600";
-        error[10].style.visibility= "visible";
+    function myBlurFunctionPostalCode() {
+        
+        var validation= validationPostalCode(inputPostalCode);
+    
+        if(validation){
+            inputPostalCode.style.border =  "1px solid #373867";
+            error[7].style.visibility= "hidden";
+        }else{
+            inputPostalCode.style.border = "solid 1px #B20600";
+            error[7].style.visibility= "visible";
+        }
     }
-}
+inputPostalCode.addEventListener("focus", myFocusFunctionPostalCode);
+inputPostalCode.addEventListener("blur", myBlurFunctionPostalCode);
+inputPostalCode.addEventListener('keydown', validateChars);    
 
-//--------------POSTALCODE
-function myBlurFunctionPostalCode() {
-    var inputPostalCode = document.getElementById('input-postalCode');
-    var validation= validationPostalCode(inputPostalCode);
-
-    if(validation){
-        inputPostalCode.style.border =  "1px solid #373867";
-        error[7].style.visibility= "hidden";
-    }else{
-        inputPostalCode.style.border = "solid 1px #B20600";
-        error[7].style.visibility= "visible";
+//-------------EMAIL    
+var inputEmail = document.getElementById('input-email');
+    function myFocusFunctionEmail() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationEmail(inputEmail);
+    
+        if(validation){
+            inputEmail.style.backgroundColor = "white";
+            inputEmail.style.border =  "1px solid #373867";
+        } else{
+            inputEmail.style.backgroundColor = "white";
+            inputEmail.style.border =  "1px solid #373867";
+        }
     }
-}
-
-//--------------LOCALITY
-function myBlurFunctionLocality() {
-    var inputLocality = document.getElementById('input-locality');
-    var validation= validationLocality(inputLocality);
-
-    if(validation){
-        inputLocality.style.border =  "1px solid #373867";
-        error[6].style.visibility= "hidden";
-    }else{
-        inputLocality.style.border = "solid 1px #B20600";
-        error[6].style.visibility= "visible";
+    function myBlurFunctionEmail() {
+        
+        var validation= validationEmail(inputEmail);
+    
+        if(validation){
+            inputEmail.style.border =  "1px solid #373867";
+            error[10].style.visibility= "hidden";
+        }else{
+            inputEmail.style.border = "solid 1px #B20600";
+            error[10].style.visibility= "visible";
+        }
     }
-}
+    
+inputEmail.addEventListener("focus", myFocusFunctionEmail);
+inputEmail.addEventListener("blur", myBlurFunctionEmail);
 
-//--------------ADDRESS
-function myBlurFunctionAddress() {
-    var inputAddress = document.getElementById('input-address');
-    var validation= validationAddress(inputAddress);
 
-    if(validation){
-        inputAddress.style.border =  "1px solid #373867";
-        error[5].style.visibility= "hidden";
-    }else{
-        inputAddress.style.border = "solid 1px #B20600";
-        error[5].style.visibility= "visible";
+//-------------PASSWORD
+var inputPassword = document.getElementById('input-password');
+    function myFocusFunctionPassword() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationPassword(inputPassword);
+    
+        if(validation){
+            inputPassword.style.backgroundColor = "white";
+            inputPassword.style.border =  "1px solid #373867";
+        } else{
+            inputPassword.style.backgroundColor = "white";
+            inputPassword.style.border =  "1px solid #373867";
+        }
     }
-}
+    function myBlurFunctionPassword() {
+        var validation= validationPassword(inputPassword);
+    
+        if(validation){
+            inputPassword.style.border =  "1px solid #373867";
+            error[8].style.visibility= "hidden";
+        }else{
+            inputPassword.style.border = "solid 1px #B20600";
+            error[8].style.visibility= "visible";
+        }
+    }    
+inputPassword.addEventListener("focus", myFocusFunctionPassword);
+inputPassword.addEventListener("blur", myBlurFunctionPassword);
 
-//--------------PASSWORD
-function myBlurFunctionPassword() {
-    var inputPassword = document.getElementById('input-password');
-    var validation= validationPassword(inputPassword);
 
-    if(validation){
-        inputPassword.style.border =  "1px solid #373867";
-        error[8].style.visibility= "hidden";
-    }else{
-        inputPassword.style.border = "solid 1px #B20600";
-        error[8].style.visibility= "visible";
+//-------------PASSWORD2    
+var inputPassword2 = document.getElementById('input-password2');
+    function myFocusFunctionPassword2() {
+        dataSend.style.visibility= "hidden";
+        var validation= validationPassword(inputPassword2);
+    
+        if(validation){
+            inputPassword2.style.backgroundColor = "white";
+            inputPassword2.style.border =  "1px solid #373867";
+        } else{
+            inputPassword2.style.backgroundColor = "white";
+            inputPassword2.style.border =  "1px solid #373867";
+        }
     }
-}
-
-//--------------PASSWORD 2
-function myBlurFunctionPassword2() {
-    var inputPassword2 = document.getElementById('input-password2');
-    var validation= validationPassword(inputPassword2);
-
-    if(validation){
-        inputPassword2.style.border =  "1px solid #373867";
-        error[9].style.visibility= "hidden";
-    }else{
-        inputPassword2.style.border = "solid 1px #B20600";
-        error[9].style.visibility= "visible";
+    function myBlurFunctionPassword2() {
+    
+        var validation= validationPassword(inputPassword2);
+    
+        if(validation){
+            inputPassword2.style.border =  "1px solid #373867";
+            error[9].style.visibility= "hidden";
+        }else{
+            inputPassword2.style.border = "solid 1px #B20600";
+            error[9].style.visibility= "visible";
+        }
     }
-}
 
-
-
-
-
+inputPassword2.addEventListener("focus", myFocusFunctionPassword2);
+inputPassword2.addEventListener("blur", myBlurFunctionPassword2);
+    
 //VALIDATIONS
 //--------------NAME && SURNAME 
 function validationName (x){
     var cont=0;
     var letters=0;
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    var alf = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-    ];
-    
+
     inputMin = x.value.toLowerCase();
     for(var i=0; i<x.value.length; i++){
         if(numbers.includes(inputMin[i])){
@@ -555,7 +527,6 @@ function validationName (x){
 //--------------DNI 
 function validationDni(x){
     var cont = 1;
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
     for(var i=0; i<x.value.length; i++){
         if(numbers.includes(x.value[i])){
@@ -583,18 +554,28 @@ function validationDate(x){
     var month = dateVal.substring(5,7);
     var day = dateVal.substring(8,10);
 
-
-        if((month.substring(0,1)==="0") && (month.substring(1,2)>0 && month.substring(1,2)<10)){
-            cont++;
-        } else if ((month.substring(0,1)==="1") && (month.substring(1,2)<10)){
-            cont++;
-        }
-
+    if(month==="02"){
         if((day.substring(0,1)==="0") && (day.substring(1,2)>0 && day.substring(1,2)<10)){
             cont++;
-        } else if ((day.substring(0,1)==="1") && (day.substring(1,2)<10)){
+            cont++;
+        } else if((day.substring(0,1)==="1" || day.substring(0,1)==="2") && (day.substring(1,2)>=0 && day.substring(1,2)<10)){
+            cont++;
             cont++;
         }
+    }else{
+        if((month.substring(0,1)==="0") && (month.substring(1,2)>0 && month.substring(1,2)<10)){
+            cont++;
+        } else if((month.substring(0,1)==="1") && (month.substring(1,2)==="1" || month.substring(1,2)==="2")){
+            cont++;
+        }
+        if((day.substring(0,1)==="0") && (day.substring(1,2)>0 && day.substring(1,2)<10)){
+            cont++;
+        } else if((day.substring(0,1)==="1" || day.substring(0,1)==="2") && (day.substring(1,2)>=0 && day.substring(1,2)<10)){
+            cont++;
+        } else if((day.substring(0,1)==="3") && (day.substring(1,2)==="0" || day.substring(1,2)==="1")){
+            cont++;
+        }
+    }
 
        if((Number(year)<2005) && (cont===2)){
            return true;
@@ -616,12 +597,13 @@ function reverseDate(x){
 //--------------PHONE 
 function validationPhone(x){
     var cont = 1;
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
     for(var i=0; i<x.value.length; i++){
         if(numbers.includes(x.value[i])){
             cont=0;
         }
     }
+    
     if(cont === 0){
         if(x.value.length===10){
             return true;
@@ -648,7 +630,7 @@ function validationEmail(x){
 //--------------POSTAL CODE 
 function validationPostalCode(x){
     var cont = 1;
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+   
     for(var i=0; i<x.value.length; i++){
         if(numbers.includes(x.value[i])){
             cont=0;
@@ -669,34 +651,6 @@ function validationPostalCode(x){
 function validationLocality(x){
     var cont=0;
     var letters=0;
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    var alf = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-    ];
     
     inputMin = x.value.toLowerCase();
     for(var i=0; i<x.value.length; i++){
@@ -708,16 +662,12 @@ function validationLocality(x){
             }
          }
     }
-
-
     if((letters!=0) && (cont!=0)){
-
         if(letters<4){
             return false;
         }else{
             return true;
         }    
-
     } else {
         return false;
     }
@@ -730,39 +680,10 @@ function validationAddress(x){
     var bolN = 0;
     var cont=0;
     var letters=0;
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    var alf = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-    ];
     
     inputMin = x.value.toLowerCase();    
 
     space = inputMin.indexOf(space);
-  
 
     for(var j=0; j<space; j++){
         if(alf.includes(inputMin[j])){
@@ -780,7 +701,7 @@ function validationAddress(x){
          }
     }
 
-    if(letters>=5 && bolN===0){
+    if(letters>4 && bolN===0){
         return true;
     }else{
         return false;
@@ -788,39 +709,10 @@ function validationAddress(x){
 
 }
 
-
 //--------------PASSWORD 
 function validationPassword(x){
     var cont=0;
     var letters=0;
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    var alf = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-    ];
     
     inputMin = x.value.toLowerCase();
     for(var i=0; i<x.value.length; i++){
@@ -844,4 +736,12 @@ function validationPassword(x){
         return false;
     }
 };
+
+function samePassword(x,y){
+    if(x === y){
+        return true;
+    }else{
+        return false;
+    }
+}
 

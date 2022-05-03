@@ -25,7 +25,8 @@ for(var i=0; i<5; i++){
 
 
 
-// c) Create a variable called “sentence” that has an empty string, then go through the array from point a) with a for loop to save each word inside the sentence variable. At the end show a single alert with the complete chain.
+// c) Create a variable called “sentence” that has an empty string, then go through the array from point 
+// a) with a for loop to save each word inside the sentence variable. At the end show a single alert with the complete chain.
 console.log('-------------------------');
 console.log('FOR c)');
 
