@@ -20,7 +20,7 @@ This week we add styles with CSS.
 # Four-week
 This week we added flexbox so that the page has a responsive design on all devices (mobile, tablet, desktop).
 
-LINK : http://127.0.0.1:5500/index.html
+LINK : http://127.0.0.1:5500/view/index.html
 
 # Five-week
 This week we work exercises with javascript that include variables, operators, arrays, loops and functions.
@@ -30,7 +30,9 @@ This week we work with javascript in the DOM, validating the Login and Sign Up f
 
 ## LINKS:
 
-SignUp : http://127.0.0.1:5500/signUp.html
+SignUp : http://127.0.0.1:5500/view/signUp.html
 
-Login : http://127.0.0.1:5500/login.html
+Login : http://127.0.0.1:5500/view/login.html
 
+# Seven-week
+This week we work with the LocalStore saving data and we also apply promises and callback to validate the data in both the singUp and the Login.
